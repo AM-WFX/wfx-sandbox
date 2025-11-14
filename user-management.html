@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management - DAP Test Site</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="sidebar">
+      <div class="nav-logo">🧪 DAP Test Site</div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Dashboard</a></li>
+        <li class="nav-item"><a href="forms.html" class="nav-link">Forms</a></li>
+        <li class="nav-item"><a href="tables.html" class="nav-link">Tables</a></li>
+        <li class="nav-item"><a href="user-management.html" class="nav-link active">Users</a></li>
+        <li class="nav-item"><a href="settings.html" class="nav-link">Settings</a></li>
+        <li class="nav-item"><a href="navigation.html" class="nav-link">Navigation</a></li>
+        <li class="nav-item"><a href="workflow.html" class="nav-link">Workflows</a></li>
+        <li class="nav-item"><a href="advanced.html" class="nav-link">Advanced</a></li>
+        <li class="nav-item"><a href="responsive.html" class="nav-link">Responsive</a></li>
+        <li class="nav-item"><a href="dynamic.html" class="nav-link">Dynamic</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <header>
+        <h1 style="margin: 0;">User Management</h1>
+        <button class="btn" data-modal-trigger="addUserModal">+ Add User</button>
+      </header>
+
+      <main>
+        <div class="breadcrumb">
+          <span class="breadcrumb-item">Home</span>
+          <span class="breadcrumb-item active">Users</span>
+        </div>
+
+        <!-- User List -->
+        <div class="card">
+          <div class="card-body">
+            <ul class="list">
+              <li class="list-item">
+                <div class="flex gap-2" style="align-items: center;">
+                  <div class="avatar">AJ</div>
+                  <div>
+                    <strong>Alice Johnson</strong><br>
+                    <span style="font-size: 12px; color: #64748b;">alice@example.com</span>
+                  </div>
+                </div>
+                <span class="badge badge-success">Active</span>
+                <div>
+                  <button class="btn btn-sm btn-outline">Edit</button>
+                  <button class="btn btn-sm btn-danger">Remove</button>
+                </div>
+              </li>
+              <li class="list-item">
+                <div class="flex gap-2" style="align-items: center;">
+                  <div class="avatar" style="background: #7c3aed;">BS</div>
+                  <div>
+                    <strong>Bob Smith</strong><br>
+                    <span style="font-size: 12px; color: #64748b;">bob@example.com</span>
+                  </div>
+                </div>
+                <span class="badge badge-success">Active</span>
+                <div>
+                  <button class="btn btn-sm btn-outline">Edit</button>
+                  <button class="btn btn-sm btn-danger">Remove</button>
+                </div>
+              </li>
+              <li class="list-item">
+                <div class="flex gap-2" style="align-items: center;">
+                  <div class="avatar" style="background: #ea580c;">CD</div>
+                  <div>
+                    <strong>Carol Davis</strong><br>
+                    <span style="font-size: 12px; color: #64748b;">carol@example.com</span>
+                  </div>
+                </div>
+                <span class="badge badge-warning">Pending</span>
+                <div>
+                  <button class="btn btn-sm btn-outline">Edit</button>
+                  <button class="btn btn-sm btn-danger">Remove</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- User Details View -->
+        <div class="grid grid-2">
+          <div class="card">
+            <div class="card-header">
+              <h3>User Profile Card</h3>
+            </div>
+            <div class="card-body" style="text-align: center; padding: 30px;">
+              <div class="avatar-lg" style="margin: 0 auto 20px;">JD</div>
+              <h3 style="margin-top: 0;">John Doe</h3>
+              <p style="color: #64748b; margin-bottom: 15px;">john@example.com</p>
+              <div style="text-align: left;">
+                <p><strong>Role:</strong> Administrator</p>
+                <p><strong>Status:</strong> <span class="badge badge-success">Active</span></p>
+                <p><strong>Last Login:</strong> 2 hours ago</p>
+              </div>
+              <button class="btn btn-block" style="margin-top: 15px;">Edit Profile</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Permissions</h3>
+            </div>
+            <div class="card-body">
+              <label style="display: flex; align-items: center; margin-bottom: 12px;">
+                <input type="checkbox" checked> Users Management
+              </label>
+              <label style="display: flex; align-items: center; margin-bottom: 12px;">
+                <input type="checkbox" checked> Reports Access
+              </label>
+              <label style="display: flex; align-items: center; margin-bottom: 12px;">
+                <input type="checkbox"> Admin Settings
+              </label>
+              <label style="display: flex; align-items: center;">
+                <input type="checkbox" checked> Analytics
+              </label>
+              <button class="btn btn-block" style="margin-top: 15px;">Save Changes</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 DAP Test Site. Built for testing digital adoption platforms.</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Add User Modal -->
+  <div id="addUserModal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Add New User</h2>
+        <button class="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Full Name" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="email@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>Role</label>
+            <select required>
+              <option>Admin</option>
+              <option>Editor</option>
+              <option>Viewer</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label style="display: flex; align-items: center;">
+              <input type="checkbox"> Send welcome email
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" data-modal-close="addUserModal">Cancel</button>
+        <button class="btn" data-modal-close="addUserModal" onclick="DAPTest.showAlert('success', 'User added successfully!')">Add User</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

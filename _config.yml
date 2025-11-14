@@ -1,0 +1,25 @@
+# Jekyll configuration for GitHub Pages
+
+title: DAP Test Site
+description: Comprehensive testing environment for digital adoption platforms
+url: "https://your-username.github.io"
+repository: "your-username/dap-test-site"
+
+theme: null
+remote_theme: null
+
+# Settings
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+
+# Exclude unnecessary files
+exclude:
+  - .gitignore
+  - .git
+  - LICENSE
+  - .github
+
+# Keep these files
+include:
+  - .nojekyll

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - DAP Test Site</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="sidebar">
+      <div class="nav-logo">🧪 DAP Test Site</div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Dashboard</a></li>
+        <li class="nav-item"><a href="forms.html" class="nav-link">Forms</a></li>
+        <li class="nav-item"><a href="tables.html" class="nav-link">Tables</a></li>
+        <li class="nav-item"><a href="user-management.html" class="nav-link">Users</a></li>
+        <li class="nav-item"><a href="settings.html" class="nav-link active">Settings</a></li>
+        <li class="nav-item"><a href="navigation.html" class="nav-link">Navigation</a></li>
+        <li class="nav-item"><a href="workflow.html" class="nav-link">Workflows</a></li>
+        <li class="nav-item"><a href="advanced.html" class="nav-link">Advanced</a></li>
+        <li class="nav-item"><a href="responsive.html" class="nav-link">Responsive</a></li>
+        <li class="nav-item"><a href="dynamic.html" class="nav-link">Dynamic</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <header>
+        <h1 style="margin: 0;">Settings</h1>
+      </header>
+
+      <main>
+        <div class="breadcrumb">
+          <span class="breadcrumb-item">Home</span>
+          <span class="breadcrumb-item active">Settings</span>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs" style="background: white; padding: 0 20px; border-radius: 8px; margin-bottom: 0;">
+          <button class="tab-button active" data-tab="account">Account</button>
+          <button class="tab-button" data-tab="notifications">Notifications</button>
+          <button class="tab-button" data-tab="security">Security</button>
+          <button class="tab-button" data-tab="appearance">Appearance</button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-contents">
+          <!-- Account Tab -->
+          <div class="tab-content active">
+            <div class="card">
+              <div class="card-header"><h3>Account Settings</h3></div>
+              <div class="card-body">
+                <div class="grid grid-2">
+                  <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" value="John">
+                  </div>
+                  <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" value="Doe">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" value="john@example.com">
+                </div>
+                <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="tel" value="+1 (555) 123-4567">
+                </div>
+                <div class="btn-group">
+                  <button class="btn" onclick="DAPTest.showAlert('success', 'Changes saved!')">Save Changes</button>
+                  <button class="btn btn-outline">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notifications Tab -->
+          <div class="tab-content">
+            <div class="card">
+              <div class="card-header"><h3>Notification Preferences</h3></div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <span>Email Notifications</span>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <span>Push Notifications</span>
+                    <label class="toggle-switch">
+                      <input type="checkbox">
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <span>SMS Alerts</span>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked>
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label>Notification Frequency</label>
+                  <select>
+                    <option>Immediate</option>
+                    <option>Hourly Digest</option>
+                    <option>Daily Digest</option>
+                    <option>Weekly</option>
+                  </select>
+                </div>
+                <button class="btn" onclick="DAPTest.showAlert('success', 'Preferences updated!')">Update Preferences</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Security Tab -->
+          <div class="tab-content">
+            <div class="card">
+              <div class="card-header"><h3>Security Settings</h3></div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label>Two-Factor Authentication</label>
+                  <div style="margin-top: 10px;">
+                    <label class="toggle-switch">
+                      <input type="checkbox">
+                      <span class="toggle-slider"></span>
+                    </label>
+                    <span class="form-hint" style="display: block;">Enhance your account security with 2FA</span>
+                  </div>
+                </div>
+                <div class="divider"></div>
+                <div class="form-group">
+                  <label>Change Password</label>
+                  <input type="password" placeholder="Current Password" style="margin-bottom: 10px;">
+                  <input type="password" placeholder="New Password" style="margin-bottom: 10px;">
+                  <input type="password" placeholder="Confirm Password">
+                  <button class="btn" style="margin-top: 15px;" onclick="DAPTest.showAlert('success', 'Password updated!')">Update Password</button>
+                </div>
+                <div class="divider"></div>
+                <div class="form-group">
+                  <h4>Active Sessions</h4>
+                  <div style="margin-top: 15px;">
+                    <div style="padding: 10px; background: #f8fafc; border-radius: 4px; margin-bottom: 10px;">
+                      <div style="display: flex; justify-content: space-between;">
+                        <div><strong>Chrome on macOS</strong><br><span class="text-muted">Last seen: 5 minutes ago</span></div>
+                        <button class="btn btn-sm btn-danger">Logout</button>
+                      </div>
+                    </div>
+                    <div style="padding: 10px; background: #f8fafc; border-radius: 4px;">
+                      <div style="display: flex; justify-content: space-between;">
+                        <div><strong>Safari on iPhone</strong><br><span class="text-muted">Last seen: 2 hours ago</span></div>
+                        <button class="btn btn-sm btn-danger">Logout</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Appearance Tab -->
+          <div class="tab-content">
+            <div class="card">
+              <div class="card-header"><h3>Appearance Settings</h3></div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label>Theme</label>
+                  <select>
+                    <option>Light</option>
+                    <option>Dark</option>
+                    <option>Auto (System)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Primary Color</label>
+                  <input type="color" value="#2563eb" style="height: 50px;">
+                </div>
+                <div class="form-group">
+                  <label>Font Size</label>
+                  <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                    <input type="range" min="12" max="18" value="14" style="flex: 1;">
+                    <span>14px</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label style="display: flex; align-items: center;">
+                    <input type="checkbox" checked> Compact Mode
+                  </label>
+                </div>
+                <button class="btn" onclick="DAPTest.showAlert('success', 'Appearance updated!')">Apply Changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 DAP Test Site. Built for testing digital adoption platforms.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Tab switching
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const tabName = button.getAttribute('data-tab');
+        const contents = document.querySelectorAll('.tab-content');
+        const buttons = document.querySelectorAll('.tab-button');
+
+        buttons.forEach(b => b.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        button.classList.add('active');
+        document.querySelectorAll('.tab-content').forEach((c, i) => {
+          if (c.previousElementSibling === button || i === Array.from(buttons).indexOf(button)) {
+            c.classList.add('active');
+          }
+        });
+
+        // Simple approach: hide all, show nth
+        document.querySelectorAll('.tab-content').forEach((c, i) => {
+          c.classList.remove('active');
+          if (i === Array.from(buttons).indexOf(button)) c.classList.add('active');
+        });
+      });
+    });
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>

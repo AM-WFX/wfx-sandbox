@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms - DAP Test Site</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="sidebar">
+      <div class="nav-logo">🧪 DAP Test Site</div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Dashboard</a></li>
+        <li class="nav-item"><a href="forms.html" class="nav-link active">Forms</a></li>
+        <li class="nav-item"><a href="tables.html" class="nav-link">Tables</a></li>
+        <li class="nav-item"><a href="user-management.html" class="nav-link">Users</a></li>
+        <li class="nav-item"><a href="settings.html" class="nav-link">Settings</a></li>
+        <li class="nav-item"><a href="navigation.html" class="nav-link">Navigation</a></li>
+        <li class="nav-item"><a href="workflow.html" class="nav-link">Workflows</a></li>
+        <li class="nav-item"><a href="advanced.html" class="nav-link">Advanced</a></li>
+        <li class="nav-item"><a href="responsive.html" class="nav-link">Responsive</a></li>
+        <li class="nav-item"><a href="dynamic.html" class="nav-link">Dynamic</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <header>
+        <h1 style="margin: 0;">Form Elements</h1>
+      </header>
+
+      <main>
+        <div class="breadcrumb">
+          <span class="breadcrumb-item">Home</span>
+          <span class="breadcrumb-item active">Forms</span>
+        </div>
+
+        <h1>Comprehensive Form Testing</h1>
+        <p>This page contains all standard HTML5 form elements for testing DAP interaction capabilities.</p>
+
+        <!-- Text Inputs -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Text Inputs</h3>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="text-input">Text Input</label>
+              <input type="text" id="text-input" placeholder="Enter text">
+              <span class="form-hint">This is a basic text input field</span>
+            </div>
+
+            <div class="form-group">
+              <label for="email-input">Email Address</label>
+              <input type="email" id="email-input" placeholder="your@email.com">
+              <span class="form-hint">Must be a valid email format</span>
+            </div>
+
+            <div class="form-group">
+              <label for="password-input">Password</label>
+              <input type="password" id="password-input" placeholder="••••••••">
+              <span class="form-hint">Minimum 8 characters required</span>
+            </div>
+
+            <div class="form-group">
+              <label for="phone-input">Phone Number</label>
+              <input type="tel" id="phone-input" placeholder="(123) 456-7890">
+            </div>
+
+            <div class="form-group">
+              <label for="url-input">Website URL</label>
+              <input type="url" id="url-input" placeholder="https://example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="search-input">Search</label>
+              <input type="search" id="search-input" placeholder="Search...">
+            </div>
+          </div>
+        </div>
+
+        <!-- Numeric Inputs -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Numeric & Date Inputs</h3>
+          </div>
+          <div class="card-body">
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label for="number-input">Number</label>
+                <input type="number" id="number-input" min="0" max="100" value="50" placeholder="Enter a number">
+              </div>
+
+              <div class="form-group">
+                <label for="range-input">Range Slider</label>
+                <input type="range" id="range-input" min="0" max="100" value="50">
+              </div>
+
+              <div class="form-group">
+                <label for="date-input">Date</label>
+                <input type="date" id="date-input">
+              </div>
+
+              <div class="form-group">
+                <label for="time-input">Time</label>
+                <input type="time" id="time-input">
+              </div>
+
+              <div class="form-group">
+                <label for="datetime-input">Date & Time</label>
+                <input type="datetime-local" id="datetime-input">
+              </div>
+
+              <div class="form-group">
+                <label for="month-input">Month</label>
+                <input type="month" id="month-input">
+              </div>
+
+              <div class="form-group">
+                <label for="week-input">Week</label>
+                <input type="week" id="week-input">
+              </div>
+
+              <div class="form-group">
+                <label for="color-input">Color Picker</label>
+                <input type="color" id="color-input" value="#2563eb">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Selects & Checkboxes -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Selects, Checkboxes & Radio Buttons</h3>
+          </div>
+          <div class="card-body">
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label for="select-input">Select Dropdown</label>
+                <select id="select-input">
+                  <option>Choose an option</option>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="multi-select">Multi-Select</label>
+                <select id="multi-select" multiple>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                  <option>Option 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Checkboxes</label>
+                <div style="margin-top: 10px;">
+                  <label style="display: flex; align-items: center; margin-bottom: 8px;">
+                    <input type="checkbox"> Option 1
+                  </label>
+                  <label style="display: flex; align-items: center; margin-bottom: 8px;">
+                    <input type="checkbox" checked> Option 2
+                  </label>
+                  <label style="display: flex; align-items: center;">
+                    <input type="checkbox"> Option 3
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Radio Buttons</label>
+                <div style="margin-top: 10px;">
+                  <label style="display: flex; align-items: center; margin-bottom: 8px;">
+                    <input type="radio" name="radio-group"> Option 1
+                  </label>
+                  <label style="display: flex; align-items: center; margin-bottom: 8px;">
+                    <input type="radio" name="radio-group" checked> Option 2
+                  </label>
+                  <label style="display: flex; align-items: center;">
+                    <input type="radio" name="radio-group"> Option 3
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Textarea</h3>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="textarea">Message</label>
+              <textarea id="textarea" placeholder="Enter your message here..."></textarea>
+              <span class="form-hint">Text area for longer form content</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- File Upload -->
+        <div class="card">
+          <div class="card-header">
+            <h3>File Upload</h3>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="file-input">File Upload (Single)</label>
+              <input type="file" id="file-input">
+              <span class="form-hint">Select a single file</span>
+            </div>
+
+            <div class="form-group">
+              <label for="file-multiple">File Upload (Multiple)</label>
+              <input type="file" id="file-multiple" multiple>
+              <span class="form-hint">Select multiple files</span>
+            </div>
+
+            <div class="form-group">
+              <label for="file-image">Image Upload</label>
+              <input type="file" id="file-image" accept="image/*">
+              <span class="form-hint">Images only (jpg, png, gif, etc.)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Complete Form Example -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Complete Registration Form</h3>
+          </div>
+          <div class="card-body">
+            <form onsubmit="event.preventDefault(); DAPTest.showAlert('success', 'Form validated and submitted!');">
+              <div class="grid grid-2">
+                <div class="form-group">
+                  <label for="fname">First Name *</label>
+                  <input type="text" id="fname" placeholder="First Name" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="lname">Last Name *</label>
+                  <input type="text" id="lname" placeholder="Last Name" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="reg-email">Email Address *</label>
+                <input type="email" id="reg-email" placeholder="email@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="reg-password">Password *</label>
+                <input type="password" id="reg-password" placeholder="••••••••" required>
+              </div>
+
+              <div class="form-group">
+                <label for="reg-confirm">Confirm Password *</label>
+                <input type="password" id="reg-confirm" placeholder="••••••••" required>
+              </div>
+
+              <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country">
+                  <option>Select a country</option>
+                  <option>United States</option>
+                  <option>Canada</option>
+                  <option>United Kingdom</option>
+                  <option>India</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label style="display: flex; align-items: flex-start;">
+                  <input type="checkbox" style="margin-top: 4px;"> I agree to the Terms and Conditions *
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label style="display: flex; align-items: flex-start;">
+                  <input type="checkbox" style="margin-top: 4px;"> Subscribe to our newsletter
+                </label>
+              </div>
+
+              <div class="btn-group">
+                <button type="submit" class="btn">Register</button>
+                <button type="reset" class="btn btn-outline">Clear</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 DAP Test Site. Built for testing digital adoption platforms.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

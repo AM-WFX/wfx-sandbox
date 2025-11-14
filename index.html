@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - DAP Test Site</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <div class="nav-logo">🧪 DAP Test Site</div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link active">Dashboard</a></li>
+        <li class="nav-item"><a href="forms.html" class="nav-link">Forms</a></li>
+        <li class="nav-item"><a href="tables.html" class="nav-link">Tables</a></li>
+        <li class="nav-item"><a href="user-management.html" class="nav-link">Users</a></li>
+        <li class="nav-item"><a href="settings.html" class="nav-link">Settings</a></li>
+        <li class="nav-item"><a href="navigation.html" class="nav-link">Navigation</a></li>
+        <li class="nav-item"><a href="workflow.html" class="nav-link">Workflows</a></li>
+        <li class="nav-item"><a href="advanced.html" class="nav-link">Advanced</a></li>
+        <li class="nav-item"><a href="responsive.html" class="nav-link">Responsive</a></li>
+        <li class="nav-item"><a href="dynamic.html" class="nav-link">Dynamic</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <!-- Header -->
+      <header>
+        <h1 style="margin: 0;">Dashboard</h1>
+        <div class="flex gap-2">
+          <button class="btn btn-sm btn-outline">Help</button>
+          <button class="btn btn-sm">Profile</button>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main>
+        <div class="breadcrumb">
+          <span class="breadcrumb-item active">Home</span>
+          <span class="breadcrumb-item">Dashboard</span>
+        </div>
+
+        <div class="hero">
+          <h1>Welcome to the Digital Adoption Platform Test Site</h1>
+          <p>A comprehensive testing environment for WalkMe, Whatfix, and similar DAPs</p>
+        </div>
+
+        <div class="alert alert-info">
+          <span>ℹ️</span>
+          <span>This site contains all common UI elements and patterns found in enterprise applications. Use it to test digital adoption platform features.</span>
+        </div>
+
+        <!-- KPI Cards -->
+        <h2>Key Metrics</h2>
+        <div class="grid grid-4">
+          <div class="card">
+            <div class="stat-icon">📊</div>
+            <div class="stat-number">1,234</div>
+            <div class="stat-label">Active Users</div>
+          </div>
+          <div class="card">
+            <div class="stat-icon">✅</div>
+            <div class="stat-number">89%</div>
+            <div class="stat-label">Completion Rate</div>
+          </div>
+          <div class="card">
+            <div class="stat-icon">⏱️</div>
+            <div class="stat-number">2.5h</div>
+            <div class="stat-label">Avg. Session</div>
+          </div>
+          <div class="card">
+            <div class="stat-icon">💰</div>
+            <div class="stat-number">$45.2K</div>
+            <div class="stat-label">Revenue</div>
+          </div>
+        </div>
+
+        <!-- Charts Area -->
+        <h2 style="margin-top: 30px;">Performance Overview</h2>
+        <div class="grid grid-2">
+          <div class="card">
+            <div class="card-header">
+              <h3>Monthly Revenue</h3>
+            </div>
+            <div class="card-body">
+              <div class="progress">
+                <div class="progress-bar success" style="width: 75%;"></div>
+              </div>
+              <p class="text-muted">Target: $60K | Current: $45.2K</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>User Engagement</h3>
+            </div>
+            <div class="card-body">
+              <div class="progress">
+                <div class="progress-bar" style="width: 89%;"></div>
+              </div>
+              <p class="text-muted">89% of users active in last 30 days</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity Table -->
+        <h2 style="margin-top: 30px;">Recent Activity</h2>
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Action</th>
+                <th>Status</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Alice Johnson</td>
+                <td>Completed onboarding</td>
+                <td><span class="badge badge-success">Completed</span></td>
+                <td>2 hours ago</td>
+              </tr>
+              <tr>
+                <td>Bob Smith</td>
+                <td>Updated profile</td>
+                <td><span class="badge badge-primary">Updated</span></td>
+                <td>4 hours ago</td>
+              </tr>
+              <tr>
+                <td>Carol Davis</td>
+                <td>Started trial</td>
+                <td><span class="badge badge-warning">In Progress</span></td>
+                <td>1 day ago</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Notifications -->
+        <h2 style="margin-top: 30px;">Quick Actions</h2>
+        <div class="btn-group">
+          <button class="btn" data-modal-trigger="exampleModal">Open Modal Example</button>
+          <button class="btn btn-secondary" onclick="DAPTest.showAlert('success', 'Button clicked! This demonstrates interactive elements.')">Show Alert</button>
+          <button class="btn btn-outline">Export Data</button>
+          <button class="btn btn-danger">Archive</button>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 DAP Test Site. Built for testing digital adoption platforms.</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal Example -->
+  <div id="exampleModal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Example Modal</h2>
+        <button class="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>This is an example modal dialog. It demonstrates how modal windows behave and can be used to test DAP modal handling capabilities.</p>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" data-modal-close="exampleModal">Cancel</button>
+        <button class="btn" data-modal-close="exampleModal" onclick="DAPTest.showAlert('success', 'Form submitted!')">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

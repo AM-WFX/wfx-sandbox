@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflows - DAP Test Site</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="sidebar">
+      <div class="nav-logo">🧪 DAP Test Site</div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Dashboard</a></li>
+        <li class="nav-item"><a href="forms.html" class="nav-link">Forms</a></li>
+        <li class="nav-item"><a href="tables.html" class="nav-link">Tables</a></li>
+        <li class="nav-item"><a href="user-management.html" class="nav-link">Users</a></li>
+        <li class="nav-item"><a href="settings.html" class="nav-link">Settings</a></li>
+        <li class="nav-item"><a href="navigation.html" class="nav-link">Navigation</a></li>
+        <li class="nav-item"><a href="workflow.html" class="nav-link active">Workflows</a></li>
+        <li class="nav-item"><a href="advanced.html" class="nav-link">Advanced</a></li>
+        <li class="nav-item"><a href="responsive.html" class="nav-link">Responsive</a></li>
+        <li class="nav-item"><a href="dynamic.html" class="nav-link">Dynamic</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <header>
+        <h1 style="margin: 0;">Real-World Workflows</h1>
+      </header>
+
+      <main>
+        <div class="breadcrumb">
+          <span class="breadcrumb-item">Home</span>
+          <span class="breadcrumb-item active">Workflows</span>
+        </div>
+
+        <!-- Sales Pipeline -->
+        <div class="card">
+          <div class="card-header"><h3>Sales Pipeline</h3></div>
+          <div class="card-body">
+            <div class="grid grid-4">
+              <div class="card" style="border: 2px solid #e2e8f0; background: #f8fafc;">
+                <div style="font-size: 12px; font-weight: 600; color: #64748b;">PROSPECT</div>
+                <div style="font-size: 24px; font-weight: bold; margin: 10px 0;">12</div>
+                <p style="margin: 0; font-size: 12px; color: #64748b;">Companies</p>
+              </div>
+              <div class="card" style="border: 2px solid #ffd800; background: #fffbeb;">
+                <div style="font-size: 12px; font-weight: 600; color: #ca8a04;">QUALIFIED</div>
+                <div style="font-size: 24px; font-weight: bold; margin: 10px 0; color: #ca8a04;">8</div>
+                <p style="margin: 0; font-size: 12px; color: #ca8a04;">Opportunities</p>
+              </div>
+              <div class="card" style="border: 2px solid #3b82f6; background: #eff6ff;">
+                <div style="font-size: 12px; font-weight: 600; color: #1e40af;">PROPOSAL</div>
+                <div style="font-size: 24px; font-weight: bold; margin: 10px 0; color: #1e40af;">5</div>
+                <p style="margin: 0; font-size: 12px; color: #1e40af;">In Review</p>
+              </div>
+              <div class="card" style="border: 2px solid #22c55e; background: #f0fdf4;">
+                <div style="font-size: 12px; font-weight: 600; color: #15803d;">CLOSED</div>
+                <div style="font-size: 24px; font-weight: bold; margin: 10px 0; color: #15803d;">3</div>
+                <p style="margin: 0; font-size: 12px; color: #15803d;">Won</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Management -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Project: Website Redesign</h3>
+            <div style="font-size: 12px; color: #64748b;">Due: Mar 31, 2024</div>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: 20px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <strong>Progress</strong>
+                <span>65%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" style="width: 65%;"></div>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <strong>Tasks:</strong>
+              <ul class="list">
+                <li class="list-item">
+                  <div style="flex: 1;">
+                    <label><input type="checkbox" checked> Design mockups</label>
+                  </div>
+                  <span class="badge badge-success">Completed</span>
+                </li>
+                <li class="list-item">
+                  <div style="flex: 1;">
+                    <label><input type="checkbox" checked> Frontend development</label>
+                  </div>
+                  <span class="badge badge-primary">In Progress</span>
+                </li>
+                <li class="list-item">
+                  <div style="flex: 1;">
+                    <label><input type="checkbox"> Backend integration</label>
+                  </div>
+                  <span class="badge badge-warning">Pending</span>
+                </li>
+                <li class="list-item">
+                  <div style="flex: 1;">
+                    <label><input type="checkbox"> Testing & QA</label>
+                  </div>
+                  <span class="badge" style="background: #e2e8f0;">Not Started</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Approval Workflow -->
+        <div class="card">
+          <div class="card-header"><h3>Expense Approval Workflow</h3></div>
+          <div class="card-body">
+            <table>
+              <thead>
+                <tr>
+                  <th>Expense</th>
+                  <th>Amount</th>
+                  <th>Submitted By</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Office Supplies</td>
+                  <td>$249.99</td>
+                  <td>John Doe</td>
+                  <td><span class="badge badge-warning">Pending Review</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-success">Approve</button>
+                    <button class="btn btn-sm btn-danger">Reject</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Conference Travel</td>
+                  <td>$1,500.00</td>
+                  <td>Jane Smith</td>
+                  <td><span class="badge badge-primary">Manager Approved</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-success">Approve</button>
+                    <button class="btn btn-sm btn-danger">Reject</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Software License</td>
+                  <td>$799.00</td>
+                  <td>Mike Johnson</td>
+                  <td><span class="badge badge-success">Approved</span></td>
+                  <td><button class="btn btn-sm btn-outline">View</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Multi-Step Process -->
+        <div class="card">
+          <div class="card-header"><h3>Customer Onboarding Process</h3></div>
+          <div class="card-body">
+            <div class="timeline">
+              <div class="timeline-item completed">
+                <div class="timeline-content">
+                  <h4>1. Account Creation</h4>
+                  <p>Customer registered and email verified.</p>
+                  <button class="btn btn-sm">View Details</button>
+                </div>
+              </div>
+              <div class="timeline-item completed">
+                <div class="timeline-content">
+                  <h4>2. Company Setup</h4>
+                  <p>Company information and branding uploaded.</p>
+                  <button class="btn btn-sm">View Details</button>
+                </div>
+              </div>
+              <div class="timeline-item completed">
+                <div class="timeline-content">
+                  <h4>3. Team Invitation</h4>
+                  <p>5 team members invited and active.</p>
+                  <button class="btn btn-sm">View Details</button>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <h4>4. Integration Setup</h4>
+                  <p>Waiting for customer to configure integrations.</p>
+                  <button class="btn btn-sm" data-modal-trigger="integrationModal">Configure</button>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <h4>5. Training Complete</h4>
+                  <p>Pending initial training session.</p>
+                  <button class="btn btn-sm" disabled>Unavailable</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="card">
+          <div class="card-header"><h3>Comments & Activity</h3></div>
+          <div class="card-body">
+            <div style="margin-bottom: 20px; padding: 15px; background: #f8fafc; border-radius: 8px;">
+              <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                <div class="avatar">JD</div>
+                <div style="flex: 1;">
+                  <strong>John Doe</strong> <span style="font-size: 12px; color: #64748b;">2 hours ago</span>
+                  <p style="margin: 8px 0 0 0; color: #1e293b;">Updated the project deadline to March 31st. Please review and confirm.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 20px; padding: 15px; background: #f8fafc; border-radius: 8px;">
+              <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                <div class="avatar" style="background: #7c3aed;">JS</div>
+                <div style="flex: 1;">
+                  <strong>Jane Smith</strong> <span style="font-size: 12px; color: #64748b;">5 hours ago</span>
+                  <p style="margin: 8px 0 0 0; color: #1e293b;">Frontend mockups have been approved. Ready to move to development phase.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <textarea placeholder="Add a comment..." style="width: 100%;"></textarea>
+              <button class="btn" style="margin-top: 10px;">Post Comment</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 DAP Test Site. Built for testing digital adoption platforms.</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="integrationModal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Configure Integrations</h2>
+        <button class="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label style="display: flex; align-items: center;">
+            <input type="checkbox"> Salesforce
+          </label>
+        </div>
+        <div class="form-group">
+          <label style="display: flex; align-items: center;">
+            <input type="checkbox"> HubSpot
+          </label>
+        </div>
+        <div class="form-group">
+          <label style="display: flex; align-items: center;">
+            <input type="checkbox"> Slack
+          </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" data-modal-close="integrationModal">Cancel</button>
+        <button class="btn" data-modal-close="integrationModal" onclick="DAPTest.showAlert('success', 'Integrations configured!')">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

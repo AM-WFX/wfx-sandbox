@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Content - DAP Test Site</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="sidebar">
+      <div class="nav-logo">🧪 DAP Test Site</div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Dashboard</a></li>
+        <li class="nav-item"><a href="forms.html" class="nav-link">Forms</a></li>
+        <li class="nav-item"><a href="tables.html" class="nav-link">Tables</a></li>
+        <li class="nav-item"><a href="user-management.html" class="nav-link">Users</a></li>
+        <li class="nav-item"><a href="settings.html" class="nav-link">Settings</a></li>
+        <li class="nav-item"><a href="navigation.html" class="nav-link">Navigation</a></li>
+        <li class="nav-item"><a href="workflow.html" class="nav-link">Workflows</a></li>
+        <li class="nav-item"><a href="advanced.html" class="nav-link">Advanced</a></li>
+        <li class="nav-item"><a href="responsive.html" class="nav-link">Responsive</a></li>
+        <li class="nav-item"><a href="dynamic.html" class="nav-link active">Dynamic</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <header>
+        <h1 style="margin: 0;">Dynamic Content & Loading States</h1>
+      </header>
+
+      <main>
+        <div class="breadcrumb">
+          <span class="breadcrumb-item">Home</span>
+          <span class="breadcrumb-item active">Dynamic</span>
+        </div>
+
+        <!-- Loading States -->
+        <div class="card">
+          <div class="card-header"><h3>Loading States & Spinners</h3></div>
+          <div class="card-body">
+            <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+              <div style="text-align: center;">
+                <div class="spinner"></div>
+                <p style="font-size: 12px; margin-top: 8px;">Small Spinner</p>
+              </div>
+              <div style="text-align: center;">
+                <div class="spinner spinner-lg"></div>
+                <p style="font-size: 12px; margin-top: 8px;">Large Spinner</p>
+              </div>
+              <div style="text-align: center;">
+                <div class="spinner spinner-sm"></div>
+                <p style="font-size: 12px; margin-top: 8px;">Extra Small</p>
+              </div>
+              <button class="btn" onclick="DAPTest.showAlert('info', 'Loading...')">Trigger Loading</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skeleton Screens -->
+        <div class="card">
+          <div class="card-header"><h3>Skeleton Loading (Placeholder)</h3></div>
+          <div class="card-body">
+            <div style="margin-bottom: 20px;">
+              <strong>Content Loading:</strong>
+              <div class="skeleton skeleton-text" style="height: 20px; margin: 10px 0;"></div>
+              <div class="skeleton skeleton-text" style="height: 20px; margin: 10px 0;"></div>
+              <div class="skeleton skeleton-text" style="height: 20px; margin: 10px 0; width: 80%;"></div>
+            </div>
+
+            <button class="btn" onclick="this.textContent = 'Content Loaded!'; this.disabled = true;">Load Content</button>
+          </div>
+        </div>
+
+        <!-- AJAX Content Loading -->
+        <div class="card">
+          <div class="card-header"><h3>AJAX Content Loading</h3></div>
+          <div class="card-body">
+            <button class="btn" data-load-content="dynamic-content">Load Content via AJAX</button>
+            <div id="dynamic-content" style="margin-top: 15px; padding: 15px; background: #f8fafc; border-radius: 8px;">
+              <p>Click the button above to load content...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empty State -->
+        <div class="card">
+          <div class="card-header"><h3>Empty State</h3></div>
+          <div class="card-body">
+            <div class="empty-state">
+              <div class="empty-state-icon">📭</div>
+              <div class="empty-state-title">No Results Found</div>
+              <div class="empty-state-description">Try adjusting your search or filters to find what you're looking for.</div>
+              <button class="btn">Clear Filters</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error State -->
+        <div class="card">
+          <div class="card-header"><h3>Error State</h3></div>
+          <div class="card-body">
+            <div class="error-state">
+              <div class="error-state-title">⚠️ Something went wrong</div>
+              <p style="margin-top: 10px; margin-bottom: 0;">The request could not be completed. Please try again.</p>
+              <button class="btn btn-danger" style="margin-top: 15px;">Retry</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Success State -->
+        <div class="card">
+          <div class="card-header"><h3>Success State</h3></div>
+          <div class="card-body">
+            <div style="text-align: center;">
+              <div class="success-checkmark">✓</div>
+              <h3 style="margin: 15px 0 5px 0;">Success!</h3>
+              <p style="color: #64748b; margin-bottom: 15px;">Your changes have been saved successfully.</p>
+              <button class="btn btn-success">Continue</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Infinite Scroll Simulation -->
+        <div class="card">
+          <div class="card-header"><h3>Infinite Scroll / Pagination</h3></div>
+          <div class="card-body">
+            <ul class="list" id="infinite-list">
+              <li class="list-item">
+                <div><strong>Item 1</strong><br><span class="text-muted">Description goes here</span></div>
+                <span class="badge badge-primary">New</span>
+              </li>
+              <li class="list-item">
+                <div><strong>Item 2</strong><br><span class="text-muted">Description goes here</span></div>
+              </li>
+              <li class="list-item">
+                <div><strong>Item 3</strong><br><span class="text-muted">Description goes here</span></div>
+              </li>
+            </ul>
+            <button class="btn btn-block" style="margin-top: 15px;">Load More Items</button>
+          </div>
+        </div>
+
+        <!-- Real-time Updates -->
+        <div class="card">
+          <div class="card-header"><h3>Real-time Data Updates</h3></div>
+          <div class="card-body">
+            <table>
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th>Value</th>
+                  <th>Trend</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Active Users</td>
+                  <td><span id="users-count">1,245</span></td>
+                  <td><span style="color: #16a34a;">↑ 12%</span></td>
+                </tr>
+                <tr>
+                  <td>Revenue</td>
+                  <td><span id="revenue-count">$45,230</span></td>
+                  <td><span style="color: #16a34a;">↑ 8%</span></td>
+                </tr>
+                <tr>
+                  <td>Conversion Rate</td>
+                  <td><span id="conversion-count">3.2%</span></td>
+                  <td><span style="color: #dc2626;">↓ 2%</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="btn" style="margin-top: 15px;" onclick="simulateRealTimeUpdate()">Simulate Update</button>
+          </div>
+        </div>
+
+        <!-- Modal with Delayed Content -->
+        <div class="card">
+          <div class="card-header"><h3>Lazy Loading Content</h3></div>
+          <div class="card-body">
+            <button class="btn" data-modal-trigger="lazyModal">Open Modal with Delayed Content</button>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 DAP Test Site. Built for testing digital adoption platforms.</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Lazy Loading Modal -->
+  <div id="lazyModal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Content Loading...</h2>
+        <button class="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="flex-center" style="min-height: 100px;">
+          <div class="spinner spinner-lg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function simulateRealTimeUpdate() {
+      const values = [
+        { id: 'users-count', val: '1,412' },
+        { id: 'revenue-count', val: '$52,145' },
+        { id: 'conversion-count', val: '3.8%' }
+      ];
+
+      values.forEach(v => {
+        document.getElementById(v.id).textContent = v.val;
+      });
+
+      DAPTest.showAlert('info', 'Data updated!');
+    }
+
+    // Simulate lazy loading modal
+    document.getElementById('lazyModal').addEventListener('modal-open', function() {
+      setTimeout(() => {
+        const header = this.querySelector('.modal-header h2');
+        header.textContent = 'Content Loaded!';
+      }, 1500);
+    });
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>

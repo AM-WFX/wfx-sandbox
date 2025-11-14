@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive - DAP Test Site</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="sidebar">
+      <div class="nav-logo">🧪 DAP Test Site</div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Dashboard</a></li>
+        <li class="nav-item"><a href="forms.html" class="nav-link">Forms</a></li>
+        <li class="nav-item"><a href="tables.html" class="nav-link">Tables</a></li>
+        <li class="nav-item"><a href="user-management.html" class="nav-link">Users</a></li>
+        <li class="nav-item"><a href="settings.html" class="nav-link">Settings</a></li>
+        <li class="nav-item"><a href="navigation.html" class="nav-link">Navigation</a></li>
+        <li class="nav-item"><a href="workflow.html" class="nav-link">Workflows</a></li>
+        <li class="nav-item"><a href="advanced.html" class="nav-link">Advanced</a></li>
+        <li class="nav-item"><a href="responsive.html" class="nav-link active">Responsive</a></li>
+        <li class="nav-item"><a href="dynamic.html" class="nav-link">Dynamic</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <header>
+        <h1 style="margin: 0;">Responsive Design</h1>
+      </header>
+
+      <main>
+        <div class="breadcrumb">
+          <span class="breadcrumb-item">Home</span>
+          <span class="breadcrumb-item active">Responsive</span>
+        </div>
+
+        <div class="alert alert-info">
+          <span>ℹ️</span>
+          <span>Resize your browser window to see responsive behavior. This page adapts to different screen sizes (mobile, tablet, desktop).</span>
+        </div>
+
+        <!-- Responsive Grid -->
+        <div class="card">
+          <div class="card-header"><h3>Responsive Grid (2 columns on desktop, 1 on mobile)</h3></div>
+          <div class="card-body">
+            <div class="grid grid-2">
+              <div style="background: #f8fafc; padding: 20px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 32px; margin-bottom: 10px;">📱</div>
+                <strong>Mobile Friendly</strong>
+                <p>Adapts to small screens</p>
+              </div>
+              <div style="background: #f8fafc; padding: 20px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 32px; margin-bottom: 10px;">💻</div>
+                <strong>Desktop Ready</strong>
+                <p>Full width on large screens</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Responsive Images -->
+        <div class="card">
+          <div class="card-header"><h3>Responsive Images & Media</h3></div>
+          <div class="card-body">
+            <div style="width: 100%; background: #e0e7ff; height: 300px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+              <div style="text-align: center; color: #4f46e5;">
+                <div style="font-size: 48px; margin-bottom: 10px;">🖼️</div>
+                <p>Responsive Image Placeholder</p>
+                <p style="font-size: 12px; color: #7c3aed;">Scales with container width</p>
+              </div>
+            </div>
+            <p>Images and media queries ensure content looks good on all devices.</p>
+          </div>
+        </div>
+
+        <!-- Responsive Forms -->
+        <div class="card">
+          <div class="card-header"><h3>Responsive Form Layout</h3></div>
+          <div class="card-body">
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="First Name">
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Last Name">
+              </div>
+              <div class="form-group" style="grid-column: 1 / -1;">
+                <label>Email</label>
+                <input type="email" placeholder="Email Address">
+              </div>
+              <div class="form-group" style="grid-column: 1 / -1;">
+                <label>Message</label>
+                <textarea placeholder="Your message..."></textarea>
+              </div>
+            </div>
+            <button class="btn btn-block" style="margin-top: 15px;">Submit</button>
+          </div>
+        </div>
+
+        <!-- Responsive Tables -->
+        <div class="card">
+          <div class="card-header"><h3>Responsive Table</h3></div>
+          <div class="card-body">
+            <p style="font-size: 12px; color: #64748b; margin-bottom: 15px;">💡 On mobile, table automatically stacks or becomes scrollable</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Stock</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Laptop Pro</td>
+                  <td>$1,299</td>
+                  <td><span class="badge badge-success">In Stock</span></td>
+                  <td><button class="btn btn-sm">Buy</button></td>
+                </tr>
+                <tr>
+                  <td>Mouse</td>
+                  <td>$29</td>
+                  <td><span class="badge badge-warning">Low Stock</span></td>
+                  <td><button class="btn btn-sm">Buy</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Touch-Friendly Elements -->
+        <div class="card">
+          <div class="card-header"><h3>Touch-Friendly Interactive Elements</h3></div>
+          <div class="card-body">
+            <p style="margin-bottom: 20px;">All buttons and interactive elements have minimum 44px height for easy touch interaction on mobile devices.</p>
+            <div class="btn-group" style="flex-direction: column;">
+              <button class="btn">Primary Button (Touch-friendly)</button>
+              <button class="btn btn-secondary">Secondary Button</button>
+              <button class="btn btn-outline">Outline Button</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breakpoint Information -->
+        <div class="card">
+          <div class="card-header"><h3>Responsive Breakpoints</h3></div>
+          <div class="card-body">
+            <table>
+              <thead>
+                <tr>
+                  <th>Device</th>
+                  <th>Breakpoint</th>
+                  <th>Layout</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mobile</td>
+                  <td>&lt; 480px</td>
+                  <td>Single column, full width</td>
+                </tr>
+                <tr>
+                  <td>Small Tablet</td>
+                  <td>480px - 768px</td>
+                  <td>Single column layout</td>
+                </tr>
+                <tr>
+                  <td>Tablet</td>
+                  <td>768px - 1024px</td>
+                  <td>Two column layout</td>
+                </tr>
+                <tr>
+                  <td>Desktop</td>
+                  <td>&gt; 1024px</td>
+                  <td>Multi-column layouts</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Flexible Components -->
+        <div class="card">
+          <div class="card-header"><h3>Flexible Card Layout</h3></div>
+          <div class="card-body">
+            <div class="grid grid-3">
+              <div style="background: #fef3c7; padding: 20px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 24px; margin-bottom: 8px;">🏠</div>
+                <strong>Responsive</strong>
+              </div>
+              <div style="background: #dbeafe; padding: 20px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 24px; margin-bottom: 8px;">⚡</div>
+                <strong>Fast</strong>
+              </div>
+              <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 24px; margin-bottom: 8px;">♿</div>
+                <strong>Accessible</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 DAP Test Site. Built for testing digital adoption platforms.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

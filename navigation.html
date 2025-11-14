@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation - DAP Test Site</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="sidebar">
+      <div class="nav-logo">🧪 DAP Test Site</div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Dashboard</a></li>
+        <li class="nav-item"><a href="forms.html" class="nav-link">Forms</a></li>
+        <li class="nav-item"><a href="tables.html" class="nav-link">Tables</a></li>
+        <li class="nav-item"><a href="user-management.html" class="nav-link">Users</a></li>
+        <li class="nav-item"><a href="settings.html" class="nav-link">Settings</a></li>
+        <li class="nav-item"><a href="navigation.html" class="nav-link active">Navigation</a></li>
+        <li class="nav-item"><a href="workflow.html" class="nav-link">Workflows</a></li>
+        <li class="nav-item"><a href="advanced.html" class="nav-link">Advanced</a></li>
+        <li class="nav-item"><a href="responsive.html" class="nav-link">Responsive</a></li>
+        <li class="nav-item"><a href="dynamic.html" class="nav-link">Dynamic</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <header>
+        <h1 style="margin: 0;">Navigation Patterns</h1>
+      </header>
+
+      <main>
+        <div class="breadcrumb-enhanced">
+          <span class="breadcrumb-enhanced-item">Home</span>
+          <span class="breadcrumb-separator">›</span>
+          <span class="breadcrumb-enhanced-item">Products</span>
+          <span class="breadcrumb-separator">›</span>
+          <span class="breadcrumb-enhanced-item active">Electronics</span>
+        </div>
+
+        <!-- Breadcrumbs -->
+        <div class="card">
+          <div class="card-header"><h3>Breadcrumb Navigation</h3></div>
+          <div class="card-body">
+            <div class="breadcrumb">
+              <span class="breadcrumb-item">Home</span>
+              <span class="breadcrumb-item">Category</span>
+              <span class="breadcrumb-item">Subcategory</span>
+              <span class="breadcrumb-item active">Current Page</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="card">
+          <div class="card-header"><h3>Tabs Navigation</h3></div>
+          <div class="card-body">
+            <div class="tabs" style="margin-bottom: 20px;">
+              <button class="tab-button active">Overview</button>
+              <button class="tab-button">Details</button>
+              <button class="tab-button">Reviews</button>
+              <button class="tab-button">Related</button>
+            </div>
+            <div class="tab-contents">
+              <div class="tab-content active">Overview content here</div>
+              <div class="tab-content">Details content here</div>
+              <div class="tab-content">Reviews content here</div>
+              <div class="tab-content">Related content here</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion -->
+        <div class="card">
+          <div class="card-header"><h3>Accordion Navigation</h3></div>
+          <div class="card-body">
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-header">
+                  <span>Getting Started</span>
+                  <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-body">
+                  <div class="accordion-content">
+                    Learn the basics and get started with our platform. This section covers initial setup and configuration.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header active">
+                  <span>Documentation</span>
+                  <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-body show">
+                  <div class="accordion-content">
+                    Complete documentation and API reference for all features and functions.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">
+                  <span>Advanced Topics</span>
+                  <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-body">
+                  <div class="accordion-content">
+                    Advanced configuration, customization, and integration options.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">
+                  <span>FAQs</span>
+                  <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-body">
+                  <div class="accordion-content">
+                    Frequently asked questions and troubleshooting guide.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdowns -->
+        <div class="card">
+          <div class="card-header"><h3>Dropdown Menus</h3></div>
+          <div class="card-body">
+            <div class="dropdown">
+              <button class="btn" data-dropdown>File</button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item">New</a>
+                <a class="dropdown-item">Open</a>
+                <a class="dropdown-item">Save</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item">Exit</a>
+              </div>
+            </div>
+            <div class="dropdown" style="margin-left: 10px;">
+              <button class="btn btn-secondary" data-dropdown>Edit</button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item">Undo</a>
+                <a class="dropdown-item">Redo</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item">Cut</a>
+                <a class="dropdown-item">Copy</a>
+                <a class="dropdown-item">Paste</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="card">
+          <div class="card-header"><h3>Pagination</h3></div>
+          <div class="card-body" style="text-align: center;">
+            <div class="pagination">
+              <button disabled>← Previous</button>
+              <button class="active">1</button>
+              <button>2</button>
+              <button>3</button>
+              <button>4</button>
+              <button>5</button>
+              <button>Next →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Steps/Progress -->
+        <div class="card">
+          <div class="card-header"><h3>Timeline / Steps</h3></div>
+          <div class="card-body">
+            <div class="timeline">
+              <div class="timeline-item completed">
+                <div class="timeline-content">
+                  <h4>Account Created</h4>
+                  <div class="timeline-date">January 15, 2024</div>
+                  <p>Your account was successfully created.</p>
+                </div>
+              </div>
+              <div class="timeline-item completed">
+                <div class="timeline-content">
+                  <h4>Profile Setup</h4>
+                  <div class="timeline-date">January 15, 2024</div>
+                  <p>Completed your profile information.</p>
+                </div>
+              </div>
+              <div class="timeline-item completed">
+                <div class="timeline-content">
+                  <h4>Email Verified</h4>
+                  <div class="timeline-date">January 16, 2024</div>
+                  <p>Your email address has been verified.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <h4>Payment Method</h4>
+                  <div class="timeline-date">Pending</div>
+                  <p>Add a payment method to activate your account.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badges & Tags -->
+        <div class="card">
+          <div class="card-header"><h3>Badges & Tags</h3></div>
+          <div class="card-body">
+            <div>
+              <strong>Status Badges:</strong><br><br>
+              <span class="badge badge-success">Active</span>
+              <span class="badge badge-warning">Warning</span>
+              <span class="badge badge-danger">Error</span>
+              <span class="badge badge-info">Info</span>
+              <span class="badge badge-primary">Featured</span>
+            </div>
+            <div style="margin-top: 20px;">
+              <strong>Tags:</strong><br><br>
+              <span class="tag">JavaScript <span class="tag-close">×</span></span>
+              <span class="tag">CSS <span class="tag-close">×</span></span>
+              <span class="tag">HTML <span class="tag-close">×</span></span>
+              <span class="tag">Web Design <span class="tag-close">×</span></span>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 DAP Test Site. Built for testing digital adoption platforms.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tables - DAP Test Site</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="components.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="sidebar">
+      <div class="nav-logo">🧪 DAP Test Site</div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Dashboard</a></li>
+        <li class="nav-item"><a href="forms.html" class="nav-link">Forms</a></li>
+        <li class="nav-item"><a href="tables.html" class="nav-link active">Tables</a></li>
+        <li class="nav-item"><a href="user-management.html" class="nav-link">Users</a></li>
+        <li class="nav-item"><a href="settings.html" class="nav-link">Settings</a></li>
+        <li class="nav-item"><a href="navigation.html" class="nav-link">Navigation</a></li>
+        <li class="nav-item"><a href="workflow.html" class="nav-link">Workflows</a></li>
+        <li class="nav-item"><a href="advanced.html" class="nav-link">Advanced</a></li>
+        <li class="nav-item"><a href="responsive.html" class="nav-link">Responsive</a></li>
+        <li class="nav-item"><a href="dynamic.html" class="nav-link">Dynamic</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <header>
+        <h1 style="margin: 0;">Data Tables</h1>
+      </header>
+
+      <main>
+        <div class="breadcrumb">
+          <span class="breadcrumb-item">Home</span>
+          <span class="breadcrumb-item active">Tables</span>
+        </div>
+
+        <h1>Table Elements & Data Display</h1>
+
+        <!-- Search & Filter -->
+        <div class="card">
+          <div class="card-body" style="padding: 20px;">
+            <div class="grid grid-2">
+              <input type="text" placeholder="Search table..." onkeyup="filterTable('basic-table', this.value)">
+              <select onchange="filterTable('basic-table', this.value, 2)">
+                <option value="">Filter by status</option>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+                <option value="Pending">Pending</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Basic Table -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Basic Table with Badges</h3>
+          </div>
+          <div class="card-body">
+            <table id="basic-table">
+              <thead>
+                <tr>
+                  <th onclick="sortTable('basic-table', 0)">Name 🔄</th>
+                  <th onclick="sortTable('basic-table', 1)">Email 🔄</th>
+                  <th>Status</th>
+                  <th onclick="sortTable('basic-table', 3)">Created 🔄</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Alice Johnson</td>
+                  <td>alice@example.com</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td>2024-01-15</td>
+                </tr>
+                <tr>
+                  <td>Bob Smith</td>
+                  <td>bob@example.com</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td>2024-01-20</td>
+                </tr>
+                <tr>
+                  <td>Carol Davis</td>
+                  <td>carol@example.com</td>
+                  <td><span class="badge badge-warning">Pending</span></td>
+                  <td>2024-02-01</td>
+                </tr>
+                <tr>
+                  <td>David Wilson</td>
+                  <td>david@example.com</td>
+                  <td><span class="badge badge-danger">Inactive</span></td>
+                  <td>2023-12-10</td>
+                </tr>
+                <tr>
+                  <td>Emma Brown</td>
+                  <td>emma@example.com</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td>2024-01-25</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Table with Actions -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Table with Action Buttons</h3>
+          </div>
+          <div class="card-body">
+            <table>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Stock</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Laptop Pro</td>
+                  <td>$1,299</td>
+                  <td><span class="badge badge-success">In Stock</span></td>
+                  <td><button class="btn btn-sm">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td>
+                </tr>
+                <tr>
+                  <td>Mouse</td>
+                  <td>$29</td>
+                  <td><span class="badge badge-warning">Low Stock</span></td>
+                  <td><button class="btn btn-sm">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td>
+                </tr>
+                <tr>
+                  <td>Keyboard</td>
+                  <td>$79</td>
+                  <td><span class="badge badge-danger">Out of Stock</span></td>
+                  <td><button class="btn btn-sm">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Table with Checkboxes -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Table with Bulk Actions</h3>
+          </div>
+          <div class="card-body">
+            <div style="margin-bottom: 15px;">
+              <button class="btn btn-sm btn-danger">Delete Selected</button>
+              <button class="btn btn-sm">Export Selected</button>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox"></th>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td>#ORD-001</td>
+                  <td>John Doe</td>
+                  <td>$499</td>
+                  <td><span class="badge badge-success">Shipped</span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td>#ORD-002</td>
+                  <td>Jane Smith</td>
+                  <td>$299</td>
+                  <td><span class="badge badge-primary">Processing</span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td>#ORD-003</td>
+                  <td>Mike Johnson</td>
+                  <td>$899</td>
+                  <td><span class="badge badge-success">Shipped</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Expandable Rows -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Table with Expandable Rows</h3>
+          </div>
+          <div class="card-body">
+            <table>
+              <thead>
+                <tr>
+                  <th>Project</th>
+                  <th>Progress</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Website Redesign</td>
+                  <td><div class="progress"><div class="progress-bar" style="width: 65%;"></div></div></td>
+                  <td><span class="badge badge-primary">In Progress</span></td>
+                  <td><button class="btn btn-sm btn-outline">Details</button></td>
+                </tr>
+                <tr style="display: none;">
+                  <td colspan="4" style="padding: 20px; background: #f8fafc;">
+                    <strong>Details:</strong> 13 of 20 tasks completed. Last update: 2 hours ago
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mobile App</td>
+                  <td><div class="progress"><div class="progress-bar success" style="width: 85%;"></div></div></td>
+                  <td><span class="badge badge-warning">Testing</span></td>
+                  <td><button class="btn btn-sm btn-outline">Details</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Paginated Table -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Paginated Table</h3>
+          </div>
+          <div class="card-body">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Department</th>
+                  <th>Salary</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>John Anderson</td><td>Engineering</td><td>$120,000</td></tr>
+                <tr><td>Sarah Martinez</td><td>Marketing</td><td>$85,000</td></tr>
+                <tr><td>Mike Thompson</td><td>Engineering</td><td>$130,000</td></tr>
+                <tr><td>Emily Taylor</td><td>HR</td><td>$75,000</td></tr>
+                <tr><td>Robert Garcia</td><td>Sales</td><td>$95,000</td></tr>
+              </tbody>
+            </table>
+            <div class="pagination">
+              <button>← Previous</button>
+              <button class="active">1</button>
+              <button>2</button>
+              <button>3</button>
+              <button>Next →</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 DAP Test Site. Built for testing digital adoption platforms.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
