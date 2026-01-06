@@ -1,5 +1,5 @@
 /* ============================================================================
-   COMPREHENSIVE DAP TEST SITE - BASE STYLES
+   COMPREHENSIVE DAP TEST SITE - BASE STYLES (WFX DOJO EDITION)
    ============================================================================ */
 
 * {
@@ -9,24 +9,36 @@
 }
 
 :root {
-  --primary: #2563eb;
-  --primary-dark: #1e40af;
-  --secondary: #7c3aed;
-  --success: #16a34a;
-  --warning: #ea580c;
-  --danger: #dc2626;
-  --info: #0891b2;
-  --light: #f8fafc;
-  --gray: #64748b;
-  --border: #e2e8f0;
-  --text: #1e293b;
-  --text-light: #64748b;
-  --radius: 0.5rem;
-  --radius-lg: 1rem;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  /* --- WHATFIX DOJO BRANDING --- */
+  /* Primary Action (Buttons, Links) -> Whatfix Orange */
+  --primary: #FF6B18;       
+  --primary-dark: #E55C00;  
+  
+  /* Secondary (Sidebar, Footer) -> Steel Gray */
+  --secondary: #25223B;     
+  --secondary-light: #36334F; 
+  
+  /* Status Colors (Kept vibrant for training visibility) */
+  --success: #10B981;       /* Emerald Green */
+  --warning: #F59E0B;       /* Amber */
+  --danger: #EF4444;        /* Red */
+  --info: #3B82F6;          /* Blue */
+  
+  /* Backgrounds & Text */
+  --light: #F9F9F2;         /* "Spring Wood" - The signature off-white beige */
+  --gray: #94A3B8;          /* Slate Grey for disabled states */
+  --border: #E2E8F0;        /* Light Grey Border */
+  
+  --text: #25223B;          /* Dark Steel Gray (High Contrast) */
+  --text-light: #64748B;    /* Muted Slate */
+  
+  /* Spacing & Effects */
+  --radius: 10px;           /* Matching the "Aeonik" rounded look */
+  --radius-lg: 16px;     
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
+  --transition: all 0.2s ease-in-out;
 }
 
 html {
@@ -34,10 +46,11 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  /* Fallback fonts if Aeonik isn't loaded locally */
+  font-family: 'Aeonik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
   color: var(--text);
-  background: #ffffff;
+  background: var(--light); /* Applies Spring Wood beige */
 }
 
 /* Layout */
@@ -54,13 +67,15 @@ body {
 
 .sidebar {
   width: 250px;
-  background: #1e293b;
+  background: var(--secondary); /* Dark Steel Gray */
   color: white;
   padding: 20px;
   overflow-y: auto;
   position: fixed;
   height: 100vh;
   left: 0;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.05);
+  border-right: none;
 }
 
 .main-content {
@@ -86,7 +101,7 @@ main {
 }
 
 footer {
-  background: #1e293b;
+  background: var(--secondary);
   color: white;
   text-align: center;
   padding: 20px;
@@ -99,6 +114,7 @@ footer {
   font-weight: bold;
   margin-bottom: 30px;
   color: white;
+  letter-spacing: 0.5px;
 }
 
 .nav-menu {
@@ -112,7 +128,7 @@ footer {
 .nav-link {
   display: block;
   padding: 10px 15px;
-  color: #cbd5e1;
+  color: #CBD5E1; /* Lighter grey for contrast */
   text-decoration: none;
   border-radius: var(--radius);
   transition: var(--transition);
@@ -125,8 +141,9 @@ footer {
 }
 
 .nav-link.active {
-  background: var(--primary);
+  background: var(--primary); /* WFX Orange */
   color: white;
+  font-weight: 500;
 }
 
 /* Typography */
@@ -180,7 +197,7 @@ p {
 }
 
 .btn-secondary:hover {
-  background: #6d28d9;
+  background: var(--secondary-light);
 }
 
 .btn-success {
@@ -188,7 +205,7 @@ p {
 }
 
 .btn-success:hover {
-  background: #15803d;
+  background: #059669; /* Darker green */
 }
 
 .btn-danger {
@@ -262,6 +279,7 @@ select {
   font-size: 14px;
   font-family: inherit;
   transition: var(--transition);
+  background-color: white;
 }
 
 input[type="text"]:focus,
@@ -277,7 +295,7 @@ textarea:focus,
 select:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 0 0 3px rgba(255, 107, 24, 0.1); /* Orange Shadow */
 }
 
 input[type="file"] {
@@ -288,6 +306,7 @@ input[type="checkbox"],
 input[type="radio"] {
   margin-right: 8px;
   cursor: pointer;
+  accent-color: var(--primary);
 }
 
 textarea {
@@ -402,33 +421,39 @@ tr:last-child td {
   border-radius: 999px;
   font-size: 12px;
   font-weight: 600;
-  background: #e2e8f0;
+  background: var(--light);
   color: var(--text);
+  border: 1px solid var(--border);
 }
 
 .badge-primary {
-  background: rgba(37, 99, 235, 0.1);
+  background: rgba(255, 107, 24, 0.1);
   color: var(--primary);
+  border-color: rgba(255, 107, 24, 0.2);
 }
 
 .badge-success {
-  background: rgba(22, 163, 74, 0.1);
+  background: rgba(16, 185, 129, 0.1);
   color: var(--success);
+  border-color: rgba(16, 185, 129, 0.2);
 }
 
 .badge-danger {
-  background: rgba(220, 38, 38, 0.1);
+  background: rgba(239, 68, 68, 0.1);
   color: var(--danger);
+  border-color: rgba(239, 68, 68, 0.2);
 }
 
 .badge-warning {
-  background: rgba(234, 88, 12, 0.1);
+  background: rgba(245, 158, 11, 0.1);
   color: var(--warning);
+  border-color: rgba(245, 158, 11, 0.2);
 }
 
 .badge-info {
-  background: rgba(8, 145, 178, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   color: var(--info);
+  border-color: rgba(59, 130, 246, 0.2);
 }
 
 /* Modal */
@@ -439,10 +464,11 @@ tr:last-child td {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(37, 34, 59, 0.6); /* Using Steel Gray with opacity */
   z-index: 1000;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(2px);
 }
 
 .modal-overlay.active {
@@ -502,26 +528,26 @@ tr:last-child td {
 }
 
 .alert-info {
-  background: rgba(8, 145, 178, 0.1);
-  border: 1px solid rgba(8, 145, 178, 0.3);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   color: var(--info);
 }
 
 .alert-success {
-  background: rgba(22, 163, 74, 0.1);
-  border: 1px solid rgba(22, 163, 74, 0.3);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   color: var(--success);
 }
 
 .alert-warning {
-  background: rgba(234, 88, 12, 0.1);
-  border: 1px solid rgba(234, 88, 12, 0.3);
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
   color: var(--warning);
 }
 
 .alert-danger {
-  background: rgba(220, 38, 38, 0.1);
-  border: 1px solid rgba(220, 38, 38, 0.3);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
   color: var(--danger);
 }
 
@@ -552,6 +578,7 @@ tr:last-child td {
 .tab-button.active {
   color: var(--primary);
   border-bottom-color: var(--primary);
+  font-weight: 600;
 }
 
 .tab-content {
@@ -578,17 +605,9 @@ tr:last-child td {
   transition: width 0.5s ease;
 }
 
-.progress-bar.success {
-  background: var(--success);
-}
-
-.progress-bar.warning {
-  background: var(--warning);
-}
-
-.progress-bar.danger {
-  background: var(--danger);
-}
+.progress-bar.success { background: var(--success); }
+.progress-bar.warning { background: var(--warning); }
+.progress-bar.danger { background: var(--danger); }
 
 /* Skeleton Loading */
 .skeleton {
@@ -723,6 +742,7 @@ tr:last-child td {
 
 .breadcrumb-item.active {
   color: var(--text);
+  font-weight: 500;
 }
 
 .breadcrumb-item::after {
@@ -743,14 +763,24 @@ tr:last-child td {
   margin-right: 8px;
 }
 
-.status.active {
-  background: var(--success);
-}
+.status.active { background: var(--success); }
+.status.inactive { background: var(--gray); }
+.status.pending { background: var(--warning); }
 
-.status.inactive {
-  background: var(--gray);
+/* Advanced Testing Styles (Detached Menu) */
+.detached-menu-container {
+    position: fixed; /* Detached from flow */
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 99999;
+    width: 200px;
+    display: none; /* Hidden */
+    border-radius: var(--radius);
+    overflow: hidden;
 }
-
-.status.pending {
-  background: var(--warning);
+.detached-menu-container.visible {
+    display: block;
 }
