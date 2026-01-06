@@ -387,3 +387,19 @@ function validateUrl(url) {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = DAPTest;
 }
+
+/* ============================================================================
+   FRAMEWORK SIMULATION UTILITIES
+   ============================================================================ */
+
+// Only run this logic if we detect the 'Framework Simulation' inputs
+document.addEventListener('DOMContentLoaded', () => {
+    // Simulate "Styled Components" changing classes on deployment
+    // This creates a new class string every time the page loads
+    const styledInput = document.querySelector('.sc-gtsrHT');
+    if(styledInput) {
+        const randomClass = 'sc-' + Math.random().toString(36).substring(7);
+        styledInput.className = `${randomClass} hKjSio`;
+        styledInput.placeholder = `class='${randomClass} hKjSio'`;
+    }
+});
