@@ -39,7 +39,37 @@
 
         <h1>Comprehensive Form Testing</h1>
         <p>This page contains all standard HTML5 form elements for testing DAP interaction capabilities.</p>
+<div class="card" style="border-left: 5px solid #8b5cf6;">
+  <div class="card-header">
+    <h3>Framework Simulation (React/Angular Style)</h3>
+  </div>
+  <div class="card-body">
+    <div class="alert alert-info">
+      <span>ℹ️</span>
+      <span>These elements mimic automated build tools. IDs exist but are ugly or alphanumeric.</span>
+    </div>
 
+    <div class="form-group">
+      <label>Alphanumeric ID (React-style)</label>
+      <input type="text" id="input_x8d9s7_field" placeholder="id='input_x8d9s7_field'">
+    </div>
+
+    <div class="form-group">
+      <label>No ID, Generated Class (Styled Components)</label>
+      <input type="text" class="sc-gtsrHT hKjSio" placeholder="class='sc-gtsrHT hKjSio'">
+    </div>
+
+    <div class="form-group">
+      <label>Duplicate IDs (Invalid HTML)</label>
+      <div class="grid grid-2">
+         <input type="text" id="duplicate-id" placeholder="id='duplicate-id'">
+         <input type="text" id="duplicate-id" placeholder="id='duplicate-id'">
+      </div>
+      <span class="form-hint">DAP will usually only find the first one.</span>
+    </div>
+
+  </div>
+</div>
         <!-- Text Inputs -->
         <div class="card">
           <div class="card-header">
