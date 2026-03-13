@@ -1,5 +1,5 @@
 /* ============================================================================
-   COMPREHENSIVE DAP TEST SITE - BASE STYLES (WFX DOJO EDITION)
+   COMPREHENSIVE DAP TEST SITE - BASE STYLES (CORPORATE EDITION)
    ============================================================================ */
 
 * {
@@ -9,32 +9,32 @@
 }
 
 :root {
-  /* --- WHATFIX DOJO BRANDING --- */
-  /* Primary Action (Buttons, Links) -> Whatfix Orange */
-  --primary: #FF6B18;       
-  --primary-dark: #E55C00;  
+  /* --- CORPORATE BRANDING --- */
+  /* Primary Action (Buttons, Links) -> Trustworthy Corporate Blue */
+  --primary: #2563EB;        
+  --primary-dark: #1D4ED8;  
   
-  /* Secondary (Sidebar, Footer) -> Steel Gray */
-  --secondary: #25223B;     
-  --secondary-light: #36334F; 
+  /* Secondary (Sidebar, Footer) -> Deep Slate/Navy */
+  --secondary: #1E293B;     
+  --secondary-light: #334155; 
   
-  /* Status Colors (Kept vibrant for training visibility) */
+  /* Status Colors (Standardized) */
   --success: #10B981;       /* Emerald Green */
   --warning: #F59E0B;       /* Amber */
   --danger: #EF4444;        /* Red */
-  --info: #3B82F6;          /* Blue */
+  --info: #0EA5E9;          /* Light Blue */
   
   /* Backgrounds & Text */
-  --light: #F9F9F2;         /* "Spring Wood" - The signature off-white beige */
-  --gray: #94A3B8;          /* Slate Grey for disabled states */
-  --border: #E2E8F0;        /* Light Grey Border */
+  --light: #F8F9FA;         /* Clean, cool off-white/light gray */
+  --gray: #9CA3AF;          /* Standard Gray */
+  --border: #E5E7EB;        /* Light Grey Border */
   
-  --text: #25223B;          /* Dark Steel Gray (High Contrast) */
-  --text-light: #64748B;    /* Muted Slate */
+  --text: #1F2937;          /* Dark Charcoal (High Contrast) */
+  --text-light: #6B7280;    /* Muted Gray */
   
   /* Spacing & Effects */
-  --radius: 10px;           /* Matching the "Aeonik" rounded look */
-  --radius-lg: 16px;     
+  --radius: 6px;            /* Sharpened slightly for a traditional corporate feel */
+  --radius-lg: 12px;     
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -50,7 +50,7 @@ body {
   font-family: 'Aeonik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
   color: var(--text);
-  background: var(--light); /* Applies Spring Wood beige */
+  background: var(--light); 
 }
 
 /* Layout */
@@ -67,7 +67,7 @@ body {
 
 .sidebar {
   width: 250px;
-  background: var(--secondary); /* Dark Steel Gray */
+  background: var(--secondary); 
   color: white;
   padding: 20px;
   overflow-y: auto;
@@ -128,7 +128,7 @@ footer {
 .nav-link {
   display: block;
   padding: 10px 15px;
-  color: #CBD5E1; /* Lighter grey for contrast */
+  color: #CBD5E1; 
   text-decoration: none;
   border-radius: var(--radius);
   transition: var(--transition);
@@ -141,7 +141,7 @@ footer {
 }
 
 .nav-link.active {
-  background: var(--primary); /* WFX Orange */
+  background: var(--primary); 
   color: white;
   font-weight: 500;
 }
@@ -295,7 +295,7 @@ textarea:focus,
 select:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(255, 107, 24, 0.1); /* Orange Shadow */
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); /* Corporate Blue Shadow */
 }
 
 input[type="file"] {
@@ -339,7 +339,7 @@ textarea {
 
 .card:hover {
   box-shadow: var(--shadow);
-  border-color: var(--primary);
+  border-color: var(--border); /* Slightly toned down hover effect */
 }
 
 .card-header {
@@ -427,9 +427,9 @@ tr:last-child td {
 }
 
 .badge-primary {
-  background: rgba(255, 107, 24, 0.1);
+  background: rgba(37, 99, 235, 0.1);
   color: var(--primary);
-  border-color: rgba(255, 107, 24, 0.2);
+  border-color: rgba(37, 99, 235, 0.2);
 }
 
 .badge-success {
@@ -451,9 +451,9 @@ tr:last-child td {
 }
 
 .badge-info {
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(14, 165, 233, 0.1);
   color: var(--info);
-  border-color: rgba(59, 130, 246, 0.2);
+  border-color: rgba(14, 165, 233, 0.2);
 }
 
 /* Modal */
@@ -464,7 +464,7 @@ tr:last-child td {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(37, 34, 59, 0.6); /* Using Steel Gray with opacity */
+  background: rgba(30, 41, 59, 0.6); /* Corporate Slate with opacity */
   z-index: 1000;
   align-items: center;
   justify-content: center;
@@ -528,8 +528,8 @@ tr:last-child td {
 }
 
 .alert-info {
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.3);
   color: var(--info);
 }
 
