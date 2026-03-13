@@ -25,7 +25,7 @@
   --info: #0EA5E9;          /* Light Blue */
   
   /* Backgrounds & Text */
-  --light: #F8F9FA;         /* Clean, cool off-white/light gray */
+  --light: #FFFFFF;         /* Pure White Background */
   --gray: #9CA3AF;          /* Standard Gray */
   --border: #E5E7EB;        /* Light Grey Border */
   
@@ -693,7 +693,7 @@ tr:last-child td {
 }
 
 .pagination button:hover {
-  background: var(--light);
+  background: #f8fafc; /* Slightly off-white hover since the background is now pure white */
 }
 
 .pagination button.active {
@@ -725,7 +725,7 @@ tr:last-child td {
 }
 
 .list-item:hover {
-  background: var(--light);
+  background: #f8fafc; /* Slightly off-white hover since the background is now pure white */
 }
 
 /* Breadcrumb */
