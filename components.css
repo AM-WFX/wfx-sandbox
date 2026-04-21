@@ -1,251 +1,70 @@
 /* ============================================================================
-   COMPREHENSIVE DAP TEST SITE - COMPONENT STYLES (ACCESSIBLE EDITION)
+   COMPONENT STYLES: SPACE & DEFINITION
    ============================================================================ */
 
-/* Toggle Switch */
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 28px;
-}
-
-.toggle-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.toggle-slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #94A3B8; /* Darker gray for visibility */
-  transition: 0.4s;
-  border-radius: 28px;
-}
-
-.toggle-slider:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 20px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-input:checked + .toggle-slider {
-  background-color: var(--primary);
-}
-
-input:checked + .toggle-slider:before {
-  transform: translateX(22px);
-}
-
-/* Accordion */
-.accordion {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: var(--white);
-  overflow: hidden;
-}
-
-.accordion-item {
-  border-bottom: 1px solid var(--border);
-}
-
-.accordion-item:last-child {
-  border-bottom: none;
-}
-
-.accordion-header {
-  background: var(--white);
-  padding: 18px 20px;
-  cursor: pointer;
-  user-select: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: var(--transition);
-  font-weight: 600;
-  color: var(--text);
-}
-
-.accordion-header:hover {
-  background: var(--surface);
-}
-
-.accordion-header.active {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.accordion-toggle {
-  transition: transform 0.3s ease;
-}
-
-.accordion-header.active .accordion-toggle {
-  transform: rotate(180deg);
-}
-
-.accordion-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  background: var(--white);
-}
-
-.accordion-body.show {
-  max-height: 1000px;
-  padding: 20px;
-  border-top: 1px solid var(--border-light);
-}
-
-.accordion-content {
-  color: var(--text); /* Changed from light to dark for readability */
-}
-
-/* Dropdown */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background: var(--white);
-  min-width: 200px;
-  box-shadow: var(--shadow-lg);
-  border-radius: var(--radius);
-  z-index: 100;
-  top: 100%;
-  left: 0;
-  border: 1px solid var(--border);
-  margin-top: 5px;
-}
-
-.dropdown-item {
-  color: var(--text);
-  padding: 12px 16px;
-  font-weight: 500;
-}
-
-.dropdown-item:hover {
-  background: var(--surface);
-  color: var(--primary);
-}
-
-/* Tooltip (High Contrast) */
-.tooltip-text {
-  background-color: #111827; /* Near Black */
-  color: var(--white);
-  padding: 10px 14px;
-  border-radius: var(--radius);
-  font-size: 13px;
-}
-
-.tooltip-text::after {
-  border-top-color: #111827;
-}
-
-/* Tag */
-.tag {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text);
-  font-weight: 600;
-  padding: 6px 14px;
-}
-
-/* Hero Section (Gradient overhaul) */
+/* Hero Section */
 .hero {
-  background: var(--surface); /* Changed from blue gradient to light grey */
-  color: var(--text);        /* Text is now black */
-  padding: 60px 30px;
-  text-align: center;
-  border: 1px solid var(--border);
+  background: var(--secondary);
+  border-left: 8px solid var(--primary);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  padding: 48px;
+  border-top: 1px solid var(--border-light);
+  border-right: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.hero h1 { margin-bottom: 16px; }
+.hero p { color: var(--text-muted); font-size: 18px; max-width: 700px; }
+
+/* Cards & Stats */
+.grid {
+  display: grid;
+  gap: 32px; /* Large gap prevents clutter */
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
-  margin-bottom: 30px;
-}
-
-.hero h1 {
-  color: var(--text);        /* Ensure H1 is black */
-  margin-bottom: 15px;
-}
-
-.hero p {
-  color: var(--text-light);  /* Ensure paragraph is slate-grey */
-  font-size: 18px;
-}
-
-/* Timeline */
-.timeline::before {
-  background: var(--border);
-}
-
-.timeline-item::before {
-  background: var(--white);
-  border: 3px solid var(--primary);
-}
-
-.timeline-content {
-  border: 1.5px solid var(--border); /* Slightly thicker for light mode */
-  box-shadow: var(--shadow-sm);
-}
-
-/* Star Rating */
-.star {
-  color: #D1D5DB; /* Higher visibility gray */
-}
-
-.star.filled, .star.hover, .star:hover {
-  color: #D97706; /* High-contrast Amber */
-}
-
-/* Avatar Group */
-.avatar-group .avatar {
-  border: 3px solid var(--white);
-}
-
-/* Stats Card */
-.stat-card {
-  border-bottom: 4px solid var(--primary); /* Visual accent */
+  padding: 32px;
+  box-shadow: var(--shadow);
 }
 
 .stat-number {
-  color: var(--text);
-  font-size: 36px;
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--text-headers);
+  margin-bottom: 4px;
 }
 
-/* Code Block (Legibility focus) */
-.code-block {
-  background: #0F172A; /* Darker Slate */
-  color: #F8FAFC;
-  border: 1px solid #334155;
-  padding: 20px;
+.stat-label {
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
 }
 
-/* Empty State */
-.empty-state-icon {
-  color: #D1D5DB;
+/* Alerts */
+.alert {
+  padding: 20px 24px;
+  border-radius: var(--radius);
+  border: 1px solid;
+  border-left-width: 6px;
+  font-weight: 500;
 }
 
-.empty-state-title {
-  color: var(--text);
+.alert-info { background: #EFF6FF; border-color: var(--primary); color: var(--primary); }
+
+/* Progress */
+.progress {
+  height: 12px;
+  background: var(--border-light);
+  border-radius: 20px;
+  margin: 16px 0;
 }
 
-/* Error State */
-.error-state {
-  background: #FEF2F2;
-  border: 1px solid #FCA5A5;
-  color: #991B1B;
-}
-
-/* Success Checkmark */
-.success-checkmark {
-  background-color: var(--success);
-  box-shadow: 0 4px 10px rgba(5, 150, 105, 0.3);
+.progress-bar {
+  background: var(--primary);
+  border-radius: 20px;
 }
