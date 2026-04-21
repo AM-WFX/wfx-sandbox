@@ -10,42 +10,23 @@
 }
 
 :root {
-  /* --- CORPORATE BRANDING --- */
-  --primary: #2563EB;        /* Primary Blue */
-  --primary-dark: #1D4ED8;  
+  /* ... other variables ... */
   
-  /* --- SURFACE & BACKGROUNDS --- */
-  --light: #FFFFFF;          /* Pure White Background */
-  --surface: #F8FAFC;       /* Very Light Gray for sectioning */
-  --border: #D1D5DB;        /* Darker Gray border for high visibility */
-  --border-light: #E5E7EB;  
+  /* Change this to make the sidebar light */
+  --secondary: #F8FAFC;        /* Light off-white sidebar */
+  --secondary-light: #E2E8F0; 
   
-  /* --- TEXT (WCAG COMPLIANT) --- */
-  --text: #111827;           /* Near Black for maximum readability */
-  --text-light: #4B5563;     /* Muted Gray (Meets 4.5:1 ratio for small text) */
-  --white: #FFFFFF;
-  
-  /* --- STATUS COLORS (Darkened for contrast against white) --- */
-  --success: #065F46;        /* Deep Emerald */
-  --success-bg: #ECFDF5;
-  --warning: #92400E;        /* Deep Amber */
-  --warning-bg: #FFFBEB;
-  --danger: #B91C1C;         /* Deep Red */
-  --danger-bg: #FEF2F2;
-  --info: #0369A1;           /* Deep Blue/Cyan */
-  --info-bg: #F0F9FF;
-  
-  /* --- SIDEBAR/NAV --- */
-  --secondary: #0F172A;      /* Deep Navy (High contrast sidebar) */
-  --secondary-light: #1E293B;
-  
-  /* --- SPACING & EFFECTS --- */
-  --radius: 4px;             /* Sharper corporate corners */
-  --radius-lg: 8px;     
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --transition: all 0.2s ease-in-out;
+  /* Update nav links to be dark so they are visible on the light sidebar */
+  --nav-link-color: #111827;
+}
+
+/* Then update this specific class in your base CSS */
+.nav-link {
+  color: var(--nav-link-color) !important;
+}
+
+.nav-logo {
+  color: #111827 !important;
 }
 
 html {
