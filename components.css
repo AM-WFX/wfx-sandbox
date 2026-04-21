@@ -162,10 +162,23 @@ input:checked + .toggle-slider:before {
 
 /* Hero Section (Gradient overhaul) */
 .hero {
-  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
-  color: var(--white);
-  padding: 80px 40px;
+  background: var(--surface); /* Changed from blue gradient to light grey */
+  color: var(--text);        /* Text is now black */
+  padding: 60px 30px;
+  text-align: center;
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  color: var(--text);        /* Ensure H1 is black */
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: var(--text-light);  /* Ensure paragraph is slate-grey */
+  font-size: 18px;
 }
 
 /* Timeline */
