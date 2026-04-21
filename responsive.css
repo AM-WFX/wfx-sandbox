@@ -154,18 +154,6 @@
   }
 }
 
-/* Updated Dark Mode Support (High Contrast Dark) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --light: #0F172A;        /* Deep Navy Background */
-    --surface: #1E293B;     /* Slate Surface */
-    --text: #F8FAFC;        /* Off-white text */
-    --text-light: #94A3B8;  /* Muted Slate */
-    --border: #334155;
-    --border-light: #1E293B;
-    --white: #F8FAFC;
-  }
-
   body {
     background: var(--light);
     color: var(--text);
