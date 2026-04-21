@@ -1,25 +1,24 @@
 /* ============================================================================
-   COMPONENT STYLES: SPACE & DEFINITION
+   COMPONENT STYLES: SPACING & KPI CARDS
    ============================================================================ */
 
 /* Hero Section */
 .hero {
   background: var(--secondary);
   border-left: 8px solid var(--primary);
-  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   padding: 48px;
   border-top: 1px solid var(--border-light);
   border-right: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
 }
 
-.hero h1 { margin-bottom: 16px; }
-.hero p { color: var(--text-muted); font-size: 18px; max-width: 700px; }
+.hero h1 { margin-bottom: 16px; font-weight: 800; }
+.hero p { color: var(--text-muted); font-size: 18px; }
 
-/* Cards & Stats */
+/* Grid & Cards */
 .grid {
   display: grid;
-  gap: 32px; /* Large gap prevents clutter */
+  gap: 32px;
 }
 
 .card {
@@ -27,14 +26,12 @@
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: 32px;
-  box-shadow: var(--shadow);
 }
 
 .stat-number {
   font-size: 40px;
   font-weight: 900;
   color: var(--text-headers);
-  margin-bottom: 4px;
 }
 
 .stat-label {
@@ -45,18 +42,17 @@
   letter-spacing: 0.5px;
 }
 
-/* Alerts */
+/* Alert Boxes */
 .alert {
   padding: 20px 24px;
   border-radius: var(--radius);
   border: 1px solid;
   border-left-width: 6px;
-  font-weight: 500;
 }
 
 .alert-info { background: #EFF6FF; border-color: var(--primary); color: var(--primary); }
 
-/* Progress */
+/* Progress Bars */
 .progress {
   height: 12px;
   background: var(--border-light);
