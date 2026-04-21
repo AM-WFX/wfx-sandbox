@@ -1,186 +1,52 @@
 /* ============================================================================
-   COMPREHENSIVE DAP TEST SITE - RESPONSIVE STYLES (HIGH-CONTRAST)
+   RESPONSIVE STYLES: CLEAN & SCALABLE
    ============================================================================ */
 
-/* --- TABLET VIEW (1024px and below) --- */
 @media (max-width: 1024px) {
-  .sidebar {
-    width: 200px;
-  }
-
-  .main-content {
-    margin-left: 200px;
-  }
-
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: repeat(2, 1fr); /* Drop to 2 columns for better tap targets */
-    gap: 15px;
-  }
+  .sidebar { width: 220px; }
+  .main-content { margin-left: 220px; }
+  main { padding: 32px; margin: 16px; }
 }
 
-/* --- MOBILE VIEW (768px and below) --- */
 @media (max-width: 768px) {
-  .page-wrapper {
-    flex-direction: column;
-  }
-
-  /* Sidebar becomes a top-navigation bar on mobile */
+  .page-wrapper { flex-direction: column; }
+  
   .sidebar {
     width: 100%;
     height: auto;
     position: relative;
-    border-right: none;
+    padding: 20px;
     border-bottom: 2px solid var(--border);
-    padding: 15px 20px;
   }
 
-  .main-content {
-    margin-left: 0;
-  }
-
-  header {
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
-
-  /* Adjust the "Paper" layout for small screens */
+  .main-content { margin-left: 0; }
+  
+  header { padding: 20px; }
+  
   main {
-    margin: 10px; /* Reduces the gap around the main content container */
-    padding: 20px 15px;
-    border-radius: 4px;
+    margin: 12px;
+    padding: 24px 16px;
+    gap: 32px;
   }
 
-  .hero {
-    padding: 30px 20px;
-    border-left-width: 4px; /* Slightly thinner accent for mobile */
-  }
+  .grid { grid-template-columns: 1fr !important; gap: 24px; }
 
-  h1 { font-size: 24px; }
-  h2 { font-size: 20px; }
-  h3 { font-size: 18px; }
+  .hero { padding: 32px 24px; border-left-width: 6px; }
 
-  /* Stack buttons for easier tapping */
-  .btn-group {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* Table Accessibility: Allow horizontal scrolling on mobile */
-  .card table, 
+  /* Touch accessibility */
+  .nav-menu { display: flex; flex-wrap: wrap; gap: 10px; }
+  .nav-link { border: 1px solid var(--border-light); }
+  
   table {
     display: block;
     overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .nav-menu {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
-  }
-
-  .nav-link {
-    padding: 8px 12px;
-    font-size: 13px;
-    background: var(--white);
     border: 1px solid var(--border-light);
   }
-
-  /* Force 16px to prevent iOS auto-zoom on forms */
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  textarea,
-  select {
-    font-size: 16px;
-    padding: 12px;
-  }
 }
 
-/* --- SMALL MOBILE VIEW (480px and below) --- */
-@media (max-width: 480px) {
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: 1fr; /* Single column for vertical scrolling */
-  }
-
-  main {
-    margin: 5px;
-    padding: 15px;
-  }
-
-  .stat-number {
-    font-size: 28px;
-  }
-
-  .breadcrumb {
-    font-size: 12px;
-    flex-wrap: wrap;
-  }
-}
-
-/* --- ACCESSIBILITY: TOUCH TARGETS --- */
-@media (hover: none) {
-  /* Ensures buttons and links are easy to hit with a thumb */
-  .btn,
-  .nav-link,
-  .tab-button {
-    min-height: 48px;
-    display: flex;
-    align-items: center;
-  }
-
-  input[type="checkbox"],
-  input[type="radio"] {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-/* --- PRINT OPTIMIZATION --- */
+/* Print Clean-up */
 @media print {
-  .sidebar, 
-  header, 
-  footer, 
-  .btn, 
-  .btn-group {
-    display: none !important;
-  }
-
-  body {
-    background: white;
-  }
-
-  main {
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-shadow: none;
-  }
-
-  .hero {
-    border: 1px solid #000;
-  }
-
-  table {
-    border: 1px solid #000;
-  }
-
-  th {
-    background: #eee !important;
-    color: #000 !important;
-  }
+  .sidebar, header, .btn { display: none !important; }
+  main { border: none; box-shadow: none; margin: 0; padding: 0; }
+  body { background: white; }
 }
