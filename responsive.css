@@ -1,7 +1,8 @@
 /* ============================================================================
-   COMPREHENSIVE DAP TEST SITE - RESPONSIVE STYLES (ACCESSIBLE EDITION)
+   COMPREHENSIVE DAP TEST SITE - RESPONSIVE STYLES (HIGH-CONTRAST)
    ============================================================================ */
 
+/* --- TABLET VIEW (1024px and below) --- */
 @media (max-width: 1024px) {
   .sidebar {
     width: 200px;
@@ -14,21 +15,25 @@
   .grid-2,
   .grid-3,
   .grid-4 {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* Drop to 2 columns for better tap targets */
+    gap: 15px;
   }
 }
 
+/* --- MOBILE VIEW (768px and below) --- */
 @media (max-width: 768px) {
   .page-wrapper {
     flex-direction: column;
   }
 
+  /* Sidebar becomes a top-navigation bar on mobile */
   .sidebar {
     width: 100%;
     height: auto;
     position: relative;
-    border-bottom: 2px solid var(--border-light);
-    padding: 15px;
+    border-right: none;
+    border-bottom: 2px solid var(--border);
+    padding: 15px 20px;
   }
 
   .main-content {
@@ -42,14 +47,23 @@
     padding: 15px 20px;
   }
 
+  /* Adjust the "Paper" layout for small screens */
   main {
-    padding: 24px 20px;
+    margin: 10px; /* Reduces the gap around the main content container */
+    padding: 20px 15px;
+    border-radius: 4px;
   }
 
-  h1 { font-size: 26px; }
-  h2 { font-size: 22px; }
+  .hero {
+    padding: 30px 20px;
+    border-left-width: 4px; /* Slightly thinner accent for mobile */
+  }
+
+  h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
   h3 { font-size: 18px; }
 
+  /* Stack buttons for easier tapping */
   .btn-group {
     flex-direction: column;
     width: 100%;
@@ -57,38 +71,34 @@
 
   .btn {
     width: 100%;
-    padding: 12px; /* Larger touch target for mobile */
+    justify-content: center;
   }
 
+  /* Table Accessibility: Allow horizontal scrolling on mobile */
+  .card table, 
   table {
     display: block;
-    overflow-x: auto; /* Prevent layout break on small screens */
-    white-space: nowrap;
-  }
-
-  .modal {
-    width: 95%;
-    margin: 10px;
-  }
-
-  .tabs {
-    flex-wrap: nowrap;
     overflow-x: auto;
+    white-space: nowrap;
     -webkit-overflow-scrolling: touch;
   }
 
-  .tab-button {
-    padding: 12px 16px;
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    padding: 8px 12px;
     font-size: 13px;
+    background: var(--white);
+    border: 1px solid var(--border-light);
   }
 
-  .flex-between {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  /* Force 16px to prevent iOS zoom-on-focus */
+  /* Force 16px to prevent iOS auto-zoom on forms */
   input[type="text"],
   input[type="email"],
   input[type="password"],
@@ -97,109 +107,80 @@
     font-size: 16px;
     padding: 12px;
   }
-
-  .nav-menu {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .nav-link {
-    padding: 10px 12px;
-    background: rgba(255, 255, 255, 0.05);
-  }
 }
 
+/* --- SMALL MOBILE VIEW (480px and below) --- */
 @media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr; /* Single column for vertical scrolling */
   }
 
   main {
-    padding: 20px 15px;
+    margin: 5px;
+    padding: 15px;
   }
 
-  h1 { font-size: 22px; }
-
-  .card {
-    padding: 16px;
+  .stat-number {
+    font-size: 28px;
   }
 
-  .modal-footer {
-    flex-direction: column;
-  }
-
-  .status {
-    width: 12px;
-    height: 12px;
+  .breadcrumb {
+    font-size: 12px;
+    flex-wrap: wrap;
   }
 }
 
-/* Touch-friendly adjustments for Accessibility */
+/* --- ACCESSIBILITY: TOUCH TARGETS --- */
 @media (hover: none) {
+  /* Ensures buttons and links are easy to hit with a thumb */
   .btn,
   .nav-link,
-  .tab-button,
-  .pagination button {
-    min-height: 44px; /* WCAG standard for touch targets */
+  .tab-button {
+    min-height: 48px;
     display: flex;
     align-items: center;
-    justify-content: center;
   }
 
   input[type="checkbox"],
   input[type="radio"] {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 }
 
-  body {
-    background: var(--light);
-    color: var(--text);
-  }
-
-  .card, header, table, select, textarea, input {
-    background: var(--surface) !important;
-    color: var(--text) !important;
-    border-color: var(--border) !important;
-  }
-
-  th {
-    background: #0F172A;
-    color: var(--white);
-  }
-
-  tr:hover {
-    background: #2D3748;
-  }
-
-  .modal {
-    background: var(--surface);
-  }
-
-  .alert-info { background: rgba(3, 105, 161, 0.2); }
-  .alert-success { background: rgba(6, 95, 70, 0.2); }
-  .alert-danger { background: rgba(185, 28, 28, 0.2); }
-}
-
-/* Print Clean-up */
+/* --- PRINT OPTIMIZATION --- */
 @media print {
-  .sidebar, header, footer, .btn, .nav-link, .detached-menu-container {
+  .sidebar, 
+  header, 
+  footer, 
+  .btn, 
+  .btn-group {
     display: none !important;
   }
 
   body {
-    background: white !important;
-    color: black !important;
+    background: white;
   }
 
-  .main-content {
-    margin-left: 0 !important;
-  }
-
-  .card {
-    border: 1px solid #000;
+  main {
+    margin: 0;
+    padding: 0;
+    border: none;
     box-shadow: none;
+  }
+
+  .hero {
+    border: 1px solid #000;
+  }
+
+  table {
+    border: 1px solid #000;
+  }
+
+  th {
+    background: #eee !important;
+    color: #000 !important;
   }
 }
