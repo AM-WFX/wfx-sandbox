@@ -1,61 +1,94 @@
 /* ============================================================================
-   STAY-LUCID BASE STYLES: SIDEBAR FIX & HIGH CONTRAST
+   GLOBAL RESET & BASE - FIXES UNSTYLED ELEMENTS & SPACING
    ============================================================================ */
 
+/* Catch-all Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 :root {
-  --primary: #1D4ED8;        
-  --primary-dark: #1E3A8A;  
-  --light: #FFFFFF;          
-  --surface: #F1F5F9;       
-  --border: #94A3B8;        
-  --border-light: #CBD5E1;  
-  --text: #0F172A;           
-  --text-headers: #000000;   
-  --text-muted: #475569;     
-  --secondary: #F8FAFC;      
+  --primary: #1D4ED8;
+  --primary-dark: #1E3A8A;
+  --light: #FFFFFF;
+  --surface: #F1F5F9;
+  --border: #94A3B8;
+  --border-light: #CBD5E1;
+  --text: #0F172A;
+  --text-headers: #000000;
+  --text-muted: #475569;
+  --secondary: #F8FAFC;
   --radius: 6px;
   --radius-lg: 12px;
   --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-  --transition: all 0.2s ease-in-out;
 }
 
 body {
-  font-family: 'Aeonik', -apple-system, sans-serif;
+  font-family: 'Aeonik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.7;
   color: var(--text);
   background: var(--surface);
 }
 
-/* FIX: Flexible Layout to prevent overlap */
+/* 1. Global Field/Button Styling (Fixes unstyled HTML elements) */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 14px;
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
+}
+
+/* Default styling for any button without a class */
+button {
+  cursor: pointer;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+/* Default styling for any input/select without a class */
+input[type="text"], input[type="email"], select, textarea {
+  border: 2px solid var(--border-light);
+  padding: 12px;
+  width: 100%;
+  color: var(--text);
+}
+
+input:focus, select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* 2. List Reset (Removes unwanted bullet points site-wide) */
+ul, ol {
+  list-style: none;
+}
+
+/* 3. Structural Spacing (Prevents divs from stacking/cluttering) */
 .page-wrapper {
   display: flex;
   min-height: 100vh;
-  align-items: stretch;
 }
 
-/* Sidebar - Sticky and distinct */
 .sidebar {
   width: 260px;
-  background: var(--secondary); 
+  background: var(--secondary);
   border-right: 2px solid var(--border-light);
   padding: 32px 20px;
-  position: sticky; /* Stays visible while scrolling content */
+  position: sticky;
   top: 0;
   height: 100vh;
-  flex-shrink: 0;   /* Prevents sidebar from squishing */
-  overflow-y: auto; /* Allows sidebar to scroll if links are long */
+  flex-shrink: 0;
 }
 
-/* Main Content Area */
 .main-content {
   flex: 1;
-  min-width: 0; /* Critical for grid responsiveness */
+  min-width: 0;
   display: flex;
   flex-direction: column;
 }
@@ -69,6 +102,7 @@ header {
   align-items: center;
 }
 
+/* Fixes stacked divs by adding universal margin to direct children of main */
 main {
   padding: 48px;
   background: var(--light);
@@ -78,75 +112,18 @@ main {
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  gap: 40px;
+}
+
+/* Vertical Rhythm: Adds space between every top-level div in the main section */
+main > div, main > section, main > h2 {
+  margin-bottom: 32px;
 }
 
 footer {
-  margin-top: auto; /* Pushes footer to bottom of main-content */
+  margin-top: auto;
   padding: 32px 48px;
   text-align: center;
   color: var(--text-muted);
-  font-size: 14px;
   border-top: 1px solid var(--border-light);
-  background: var(--white);
-}
-
-/* Navigation */
-.nav-logo {
-  font-size: 20px;
-  font-weight: 800;
-  margin-bottom: 40px;
-  color: var(--text-headers);
-}
-
-.nav-item { margin-bottom: 8px; list-style: none; }
-
-.nav-link {
-  display: block;
-  padding: 14px 16px;
-  color: var(--text-muted);
-  text-decoration: none;
-  border-radius: var(--radius);
-  font-weight: 600;
-}
-
-.nav-link.active {
-  background: var(--primary); 
-  color: white;
-}
-
-/* Tables */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid var(--border);
-}
-
-th {
-  background: var(--text);
-  color: white;
-  padding: 16px 24px;
-  text-align: left;
-}
-
-td {
-  padding: 18px 24px;
-  border-bottom: 1px solid var(--border-light);
-}
-
-/* Buttons */
-.btn {
-  padding: 12px 24px;
-  background: var(--primary);
-  color: white;
-  border: none;
-  border-radius: var(--radius);
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.btn-outline {
-  background: transparent;
-  border: 2px solid var(--primary);
-  color: var(--primary);
+  background: var(--light);
 }
