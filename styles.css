@@ -1,5 +1,5 @@
 /* ============================================================================
-   COMPREHENSIVE DAP TEST SITE - HIGH CONTRAST BASE
+   STAY-LUCID BASE STYLES: HIGH-CONTRAST & AIRY
    ============================================================================ */
 
 * {
@@ -9,99 +9,67 @@
 }
 
 :root {
-  /* --- HIGH CONTRAST PALETTE --- */
-  --primary: #1D4ED8;        /* Vivid Corporate Blue */
+  --primary: #1D4ED8;        
   --primary-dark: #1E3A8A;  
   
-  --light: #FFFFFF;          /* Pure White */
-  --surface: #F1F5F9;       /* Light Slate for background contrast */
-  --border: #94A3B8;        /* Strong structural borders */
-  --border-light: #CBD5E1;  /* Subtle UI borders */
+  --light: #FFFFFF;          
+  --surface: #F1F5F9;       /* Slate-100: Background for the "Paper" layout */
+  --border: #94A3B8;        /* Slate-400: Structural borders */
+  --border-light: #CBD5E1;  /* Slate-300: UI dividers */
   
-  --text: #0F172A;           /* Near Black for body */
-  --text-headers: #000000;   /* Pure Black for headers */
-  --text-muted: #475569;     /* Deep Slate for muted text */
+  --text: #0F172A;           /* Slate-900: Primary Text */
+  --text-headers: #000000;   /* Pure Black */
+  --text-muted: #475569;     /* Slate-600: Secondary Text */
   
   --secondary: #F8FAFC;      /* Sidebar Background */
   
-  --radius: 4px;
-  --radius-lg: 8px;
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --radius: 6px;
+  --radius-lg: 12px;
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --transition: all 0.2s ease-in-out;
 }
 
 body {
   font-family: 'Aeonik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text);
-  background: var(--surface); /* Darker background makes white cards "pop" */
+  background: var(--surface); /* Darker background makes content "pop" */
 }
 
-/* Layout Hierarchy */
 .page-wrapper {
   display: flex;
   min-height: 100vh;
 }
 
+/* Sidebar - Organized & Spaced */
 .sidebar {
-  width: 250px;
+  width: 260px;
   background: var(--secondary); 
   border-right: 2px solid var(--border-light);
-  padding: 20px;
+  padding: 32px 20px;
   position: fixed;
   height: 100vh;
   z-index: 100;
 }
 
-.main-content {
-  margin-left: 250px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-header {
-  background: var(--light);
-  border-bottom: 2px solid var(--border); /* Strong separation */
-  padding: 20px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-main {
-  flex: 1;
-  padding: 40px;
-  background: var(--light); /* White content area on Slate background */
-  max-width: 1400px;
-  margin: 20px;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: var(--text-muted);
-  font-size: 14px;
-}
-
-/* Navigation Links */
 .nav-logo {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  padding: 0 12px;
   color: var(--text-headers);
+  letter-spacing: -0.5px;
 }
+
+.nav-item { margin-bottom: 8px; list-style: none; }
 
 .nav-link {
   display: block;
-  padding: 12px 15px;
+  padding: 14px 16px;
   color: var(--text-muted);
   text-decoration: none;
   border-radius: var(--radius);
-  font-weight: 500;
+  font-weight: 600;
   transition: var(--transition);
 }
 
@@ -113,53 +81,53 @@ footer {
 .nav-link.active {
   background: var(--primary); 
   color: white;
-  font-weight: 600;
 }
 
-/* Typography */
-h1, h2, h3 {
-  color: var(--text-headers);
-  font-weight: 800;
+/* Main Content - The "Paper" Container */
+.main-content {
+  margin-left: 260px;
+  flex: 1;
 }
 
-h1 { font-size: 32px; margin-bottom: 20px; }
-h2 { font-size: 24px; margin: 30px 0 15px; border-left: 4px solid var(--primary); padding-left: 15px; }
-
-/* Buttons */
-.btn {
-  padding: 10px 20px;
-  background: var(--primary);
-  color: white;
-  border: none;
-  border-radius: var(--radius);
-  font-weight: 700;
-  cursor: pointer;
-  transition: var(--transition);
+header {
+  background: var(--light);
+  border-bottom: 2px solid var(--border);
+  padding: 24px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.btn-outline {
-  background: transparent;
-  border: 2px solid var(--primary);
-  color: var(--primary);
+main {
+  padding: 48px;
+  background: var(--light);
+  margin: 32px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  /* De-cluttering: Space out top-level elements automatically */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.btn-outline:hover {
-  background: var(--primary);
-  color: white;
-}
+/* Typography Hierarchy */
+h1 { font-size: 36px; font-weight: 800; color: var(--text-headers); letter-spacing: -1px; }
+h2 { font-size: 24px; font-weight: 800; color: var(--text-headers); border-bottom: 2px solid var(--surface); padding-bottom: 12px; }
 
-/* Data Tables - High Contrast */
+/* Tables */
 table {
   width: 100%;
   border-collapse: collapse;
   border: 1px solid var(--border);
-  margin: 20px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 th {
-  background: var(--text); /* Black header */
+  background: var(--text);
   color: white;
-  padding: 15px;
+  padding: 16px 24px;
   text-align: left;
   font-size: 12px;
   text-transform: uppercase;
@@ -167,19 +135,26 @@ th {
 }
 
 td {
-  padding: 15px;
+  padding: 18px 24px;
   border-bottom: 1px solid var(--border-light);
-  color: var(--text);
 }
 
-tr:nth-child(even) { background: var(--secondary); }
+/* Buttons */
+.btn {
+  padding: 12px 24px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 
-/* Badges */
-.badge {
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-weight: 800;
-  font-size: 11px;
-  text-transform: uppercase;
-  border: 1px solid currentColor;
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
 }
