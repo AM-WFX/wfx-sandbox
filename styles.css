@@ -1,6 +1,5 @@
 /* ============================================================================
-   COMPREHENSIVE DAP TEST SITE - ACCESSIBLE CORPORATE EDITION
-   Theme: High Contrast Light Mode
+   COMPREHENSIVE DAP TEST SITE - HIGH CONTRAST BASE
    ============================================================================ */
 
 * {
@@ -10,44 +9,35 @@
 }
 
 :root {
-  /* ... other variables ... */
+  /* --- HIGH CONTRAST PALETTE --- */
+  --primary: #1D4ED8;        /* Vivid Corporate Blue */
+  --primary-dark: #1E3A8A;  
   
-  /* Change this to make the sidebar light */
-  --secondary: #F8FAFC;        /* Light off-white sidebar */
-  --secondary-light: #E2E8F0; 
+  --light: #FFFFFF;          /* Pure White */
+  --surface: #F1F5F9;       /* Light Slate for background contrast */
+  --border: #94A3B8;        /* Strong structural borders */
+  --border-light: #CBD5E1;  /* Subtle UI borders */
   
-  /* Update nav links to be dark so they are visible on the light sidebar */
-  --nav-link-color: #111827;
-}
-
-/* Then update this specific class in your base CSS */
-.nav-link {
-  color: var(--nav-link-color) !important;
-}
-
-.nav-logo {
-  color: #111827 !important;
-}
-
-html {
-  scroll-behavior: smooth;
+  --text: #0F172A;           /* Near Black for body */
+  --text-headers: #000000;   /* Pure Black for headers */
+  --text-muted: #475569;     /* Deep Slate for muted text */
+  
+  --secondary: #F8FAFC;      /* Sidebar Background */
+  
+  --radius: 4px;
+  --radius-lg: 8px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --transition: all 0.2s ease-in-out;
 }
 
 body {
-  font-family: 'Aeonik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Aeonik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   color: var(--text);
-  background: var(--light);
-  -webkit-font-smoothing: antialiased;
+  background: var(--surface); /* Darker background makes white cards "pop" */
 }
 
-/* Layout */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
+/* Layout Hierarchy */
 .page-wrapper {
   display: flex;
   min-height: 100vh;
@@ -56,12 +46,10 @@ body {
 .sidebar {
   width: 250px;
   background: var(--secondary); 
-  color: var(--white);
+  border-right: 2px solid var(--border-light);
   padding: 20px;
-  overflow-y: auto;
   position: fixed;
   height: 100vh;
-  left: 0;
   z-index: 100;
 }
 
@@ -70,13 +58,12 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-width: 0; /* Prevent flex overflow */
 }
 
 header {
   background: var(--light);
-  border-bottom: 2px solid var(--border-light);
-  padding: 15px 30px;
+  border-bottom: 2px solid var(--border); /* Strong separation */
+  padding: 20px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,110 +71,71 @@ header {
 
 main {
   flex: 1;
-  padding: 40px 30px;
-  background: var(--light);
+  padding: 40px;
+  background: var(--light); /* White content area on Slate background */
+  max-width: 1400px;
+  margin: 20px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
 }
 
 footer {
-  background: var(--surface);
-  color: var(--text-light);
   text-align: center;
   padding: 20px;
-  border-top: 1px solid var(--border-light);
+  color: var(--text-muted);
+  font-size: 14px;
 }
 
-/* Navigation */
+/* Navigation Links */
 .nav-logo {
   font-size: 18px;
   font-weight: 800;
   margin-bottom: 30px;
-  color: var(--white);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-.nav-menu {
-  list-style: none;
-}
-
-.nav-item {
-  margin: 4px 0;
+  color: var(--text-headers);
 }
 
 .nav-link {
   display: block;
   padding: 12px 15px;
-  color: #94A3B8; 
+  color: var(--text-muted);
   text-decoration: none;
   border-radius: var(--radius);
-  transition: var(--transition);
-  font-size: 14px;
   font-weight: 500;
+  transition: var(--transition);
 }
 
 .nav-link:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--white);
+  background: var(--border-light);
+  color: var(--primary);
 }
 
 .nav-link.active {
   background: var(--primary); 
-  color: var(--white);
+  color: white;
+  font-weight: 600;
 }
 
 /* Typography */
-h1 {
-  font-size: 32px;
+h1, h2, h3 {
+  color: var(--text-headers);
   font-weight: 800;
-  margin-bottom: 24px;
-  color: var(--text);
 }
 
-h2 {
-  font-size: 24px;
-  font-weight: 700;
-  margin: 32px 0 16px 0;
-  color: var(--text);
-}
-
-h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 16px 0 8px 0;
-}
-
-p {
-  margin-bottom: 16px;
-  color: var(--text); /* Solid dark text for body */
-}
+h1 { font-size: 32px; margin-bottom: 20px; }
+h2 { font-size: 24px; margin: 30px 0 15px; border-left: 4px solid var(--primary); padding-left: 15px; }
 
 /* Buttons */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 24px;
+  padding: 10px 20px;
   background: var(--primary);
-  color: var(--white);
+  color: white;
   border: none;
   border-radius: var(--radius);
+  font-weight: 700;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
   transition: var(--transition);
-  text-decoration: none;
 }
-
-.btn:hover {
-  background: var(--primary-dark);
-  box-shadow: var(--shadow);
-}
-
-.btn-secondary { background: var(--secondary); }
-.btn-secondary:hover { background: var(--secondary-light); }
-
-.btn-success { background: var(--success); }
-.btn-danger { background: var(--danger); }
 
 .btn-outline {
   background: transparent;
@@ -197,169 +145,41 @@ p {
 
 .btn-outline:hover {
   background: var(--primary);
-  color: var(--white);
+  color: white;
 }
 
-/* Forms */
-.form-group {
-  margin-bottom: 24px;
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: var(--text);
-  font-size: 14px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea,
-select {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid var(--border-light);
-  border-radius: var(--radius);
-  font-size: 14px;
-  color: var(--text);
-  background-color: var(--white);
-  transition: border-color 0.2s;
-}
-
-input:focus, textarea:focus, select:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-/* Cards */
-.card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  margin-bottom: 24px;
-  box-shadow: var(--shadow-sm);
-}
-
-/* Tables */
+/* Data Tables - High Contrast */
 table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--white);
   border: 1px solid var(--border);
-  margin-bottom: 24px;
+  margin: 20px 0;
 }
 
 th {
-  background: var(--surface);
-  padding: 16px;
+  background: var(--text); /* Black header */
+  color: white;
+  padding: 15px;
   text-align: left;
-  font-weight: 700;
-  font-size: 13px;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.025em;
-  border-bottom: 2px solid var(--border);
+  letter-spacing: 1px;
 }
 
 td {
-  padding: 16px;
+  padding: 15px;
   border-bottom: 1px solid var(--border-light);
-  font-size: 14px;
-}
-
-tr:hover {
-  background: var(--surface);
-}
-
-/* Badges */
-.badge {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.badge-primary { background: #DBEAFE; color: var(--primary); }
-.badge-success { background: var(--success-bg); color: var(--success); }
-.badge-danger { background: var(--danger-bg); color: var(--danger); }
-.badge-warning { background: var(--warning-bg); color: var(--warning); }
-
-/* Alerts */
-.alert {
-  padding: 16px 20px;
-  border-radius: var(--radius);
-  margin-bottom: 24px;
-  border-left: 4px solid;
-  font-weight: 500;
-}
-
-.alert-info { background: var(--info-bg); border-color: var(--info); color: var(--info); }
-.alert-success { background: var(--success-bg); border-color: var(--success); color: var(--success); }
-.alert-danger { background: var(--danger-bg); border-color: var(--danger); color: var(--danger); }
-
-/* Tabs */
-.tabs {
-  display: flex;
-  border-bottom: 2px solid var(--border-light);
-  margin-bottom: 24px;
-}
-
-.tab-button {
-  background: none;
-  border: none;
-  padding: 12px 24px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-light);
-  border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
-}
-
-.tab-button.active {
-  color: var(--primary);
-  border-bottom-color: var(--primary);
-}
-
-/* Pagination */
-.pagination button {
-  padding: 8px 16px;
-  border: 1px solid var(--border);
-  background: var(--white);
-  font-weight: 600;
   color: var(--text);
 }
 
-.pagination button.active {
-  background: var(--primary);
-  color: var(--white);
-  border-color: var(--primary);
-}
+tr:nth-child(even) { background: var(--secondary); }
 
-/* Utilities */
-.text-muted { color: var(--text-light); }
-.mt-4 { margin-top: 20px; }
-.mb-4 { margin-bottom: 20px; }
-.flex-between { display: flex; justify-content: space-between; align-items: center; }
-
-/* Status Indicators */
-.status {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-right: 8px;
-}
-.status.active { background: #10B981; }
-.status.inactive { background: #9CA3AF; }
-
-/* Modal Overlay Accessibility */
-.modal-overlay {
-  background: rgba(15, 23, 42, 0.8); /* Darker backdrop for focus */
-  backdrop-filter: blur(4px);
+/* Badges */
+.badge {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 11px;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
 }
